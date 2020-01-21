@@ -10,11 +10,11 @@ before_script:
   - npm install -g @angular/cli
 script:
 - ng lint
-- ng build --prod --base-href https://AgnieszkaKurek.github.io/TicTacToeGameAngular/
+- ng build --prod --base-href https://AgnieszkaKurek.github.io/MyTouristGuide/
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/TouristGuide
+  local_dir: dist/MyTouristGuide
   on:
     branch: master
