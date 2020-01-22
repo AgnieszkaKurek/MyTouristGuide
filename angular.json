@@ -27,9 +27,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": [],
             "scripts": []
           },
           "configurations": {
@@ -80,8 +78,20 @@
           "options": {
             "browserTarget": "MyTouristGuide:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
         }
       }
-    }},
+    }
+  }
+},
   "defaultProject": "MyTouristGuide"
 }
