@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './guide.component.html',
 })
 export class GuideComponent {
-  text = 'Hello World!';
+  text = 'Hello World 2!';
 }
