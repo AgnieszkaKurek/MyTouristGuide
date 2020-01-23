@@ -6,8 +6,8 @@ import { GuideComponent } from './guide/guide.component';
 
 @NgModule({
   declarations: [
-  GuideComponent
-],
+    GuideComponent,
+  ],
   imports: [
     BrowserModule,
   ],
