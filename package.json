@@ -4,7 +4,7 @@
   "homepage": "https://agnieszkakurek.github.io/MyTouristGuide/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
