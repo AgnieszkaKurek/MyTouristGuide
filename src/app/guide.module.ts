@@ -5,6 +5,7 @@ import { GuideComponent } from './guide/guide.component';
 import { GrideViewComponent } from './gride-view/gride-view.component';
 import { TileViewComponent } from './tile-view/tile-view.component';
 import { MapViewComponent } from './map-view/map-view.component';
+import { GuideRoutingModule } from './guide-routing.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MapViewComponent } from './map-view/map-view.component';
   ],
   imports: [
     BrowserModule,
+    GuideRoutingModule,
   ],
   providers: [],
   bootstrap: [GuideComponent]
