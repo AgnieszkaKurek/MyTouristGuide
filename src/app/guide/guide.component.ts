@@ -3,7 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'tg-guide',
   templateUrl: './guide.component.html',
+  styleUrls: ['./guide.component.scss',
+]
+
 })
 export class GuideComponent {
-  text = 'Hello World 2!';
+  text = 'This is Guide';
 }

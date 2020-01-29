@@ -5,9 +5,9 @@ import { TileListComponent } from './tile-list/tile-list.component';
 import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
-  { path: 'grid-list', component: GridListComponent },
-  { path: 'tile-list', component:  TileListComponent },
-  { path: 'map', component:  MapComponent }
+  { path: 'grid', component: GridListComponent },
+  { path: 'tile', component: TileListComponent },
+  { path: 'map', component: MapComponent }
 ];
 
 @NgModule({
