@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { GuideComponent } from './guide/guide.component';
 import { GridListComponent } from './grid-list/grid-list.component';
 import { TileListComponent } from './tile-list/tile-list.component';
-import { MapViewComponent } from './map-view/map-view.component';
+import { MapComponent } from './map/map.component';
 import { GuideRoutingModule } from './guide-routing.module';
 
 
@@ -13,7 +13,7 @@ import { GuideRoutingModule } from './guide-routing.module';
     GuideComponent,
     GridListComponent,
     TileListComponent,
-    MapViewComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
