@@ -1,4 +1,5 @@
 export class TouristAttraction {
-  name: string;
   category: string;
+  name: string;
+  location: string;
 }
