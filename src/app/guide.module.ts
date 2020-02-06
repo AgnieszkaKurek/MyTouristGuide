@@ -20,6 +20,6 @@ import { GuideRoutingModule } from './guide-routing.module';
     GuideRoutingModule,
   ],
   providers: [],
-  bootstrap: [GuideComponent]
+  bootstrap: [GuideComponent],
 })
 export class GuideModule { }

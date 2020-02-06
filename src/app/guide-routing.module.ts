@@ -7,12 +7,12 @@ import { MapComponent } from './map/map.component';
 const routes: Routes = [
   { path: 'grid', component: GridListComponent },
   { path: 'tile', component: TileListComponent },
-  { path: 'map', component: MapComponent }
+  { path: 'map', component: MapComponent },
 ];
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class GuideRoutingModule { }

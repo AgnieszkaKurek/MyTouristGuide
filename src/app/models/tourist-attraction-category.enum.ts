@@ -1,9 +1,9 @@
 export enum TouristAttractionCategory {
-  Castle = 'castle',
-  MusicFestival = 'music festival',
-  OpenAirMuseum = 'open-air museum',
-  AmusementPark = 'amusement park',
-  HauntedHause = 'haunted house',
-  SportsFacility = 'sports facility',
-  Zoo = 'zoo'
+  Castle = 'Castle',
+  MusicFestival = 'Music festival',
+  OpenAirMuseum = 'Open-air museum',
+  AmusementPark = 'Amusement park',
+  HauntedHause = 'Haunted house',
+  SportFacility = 'Sport facility',
+  Zoo = 'Zoo',
 }
