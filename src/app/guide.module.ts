@@ -6,7 +6,9 @@ import { GridListComponent } from './grid-list/grid-list.component';
 import { TileListComponent } from './tile-list/tile-list.component';
 import { MapComponent } from './map/map.component';
 import { GuideRoutingModule } from './guide-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { TouristAttractionDb } from './tourist-attraction-db.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { GuideRoutingModule } from './guide-routing.module';
   imports: [
     BrowserModule,
     GuideRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(TouristAttractionDb),
   ],
   providers: [],
   bootstrap: [GuideComponent],

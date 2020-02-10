@@ -2,15 +2,20 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Injectable } from '@angular/core';
 import { TouristAttractionCategory } from './models/tourist-attraction-category.enum';
 import { TouristAttraction } from './models/tourist-attraction';
-import { of, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TouristAttractionDb implements InMemoryDbService {
 
-  public createDb(): Observable<TouristAttraction[]> {
-    return of([
+  public createDb() {
+    return {
+      touristAttractions: this.getTouristAttractions(),
+    };
+  }
+
+  private getTouristAttractions(): TouristAttraction[] {
+    return [
       {
         category: TouristAttractionCategory.Castle,
         name: 'Bolkow Castle Museum',
@@ -53,6 +58,6 @@ export class TouristAttractionDb implements InMemoryDbService {
         place: 'Wroclaw',
         lastVisited: new Date('2016-07-06'),
       },
-    ]);
+    ];
   }
 }

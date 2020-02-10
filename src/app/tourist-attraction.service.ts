@@ -1,9 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { TouristAttraction } from './models/tourist-attraction';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TouristAttractionService {
 
-  constructor() { }
+  private touristAttractionsUrl = 'api/touristAttractions';
+
+  public constructor(
+    private http: HttpClient,
+  ) {
+  }
+
+ public getTouristAttractions(): Observable<TouristAttraction[]> {
+    return this.http.get<TouristAttraction[]>(this.touristAttractionsUrl);
+  }
+
 }
