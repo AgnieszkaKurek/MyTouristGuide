@@ -9,6 +9,7 @@ import { GuideRoutingModule } from './guide-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TouristAttractionDb } from './tourist-attraction-db.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TouristAttractionDb } from './tourist-attraction-db.service';
     GuideRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(TouristAttractionDb),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [GuideComponent],
