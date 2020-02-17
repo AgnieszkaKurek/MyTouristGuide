@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GridListComponent } from './grid-list/grid-list.component';
+import { TableListComponent } from './table-list/table-list.component';
 import { TileListComponent } from './tile-list/tile-list.component';
 import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
-  { path: 'grid', component: GridListComponent },
+  { path: 'table', component: TableListComponent },
   { path: 'tile', component: TileListComponent },
   { path: 'map', component: MapComponent },
 ];
