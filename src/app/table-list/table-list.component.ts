@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { TouristAttraction } from '../models/tourist-attraction';
 
 @Component({
-  selector: 'tg-grid-list',
-  templateUrl: './grid-list.component.html',
+  selector: 'tg-table-list',
+  templateUrl: './table-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridListComponent implements OnInit {
+export class TableListComponent implements OnInit {
   public touristAttractions$: Observable<TouristAttraction[]>;
   public columns: string[] = [
     'name',
