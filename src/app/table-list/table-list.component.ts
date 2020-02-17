@@ -6,6 +6,7 @@ import { TouristAttraction } from '../models/tourist-attraction';
 @Component({
   selector: 'tg-table-list',
   templateUrl: './table-list.component.html',
+  styleUrls: ['./table-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableListComponent implements OnInit {
