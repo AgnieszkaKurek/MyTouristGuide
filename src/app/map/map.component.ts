@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'tg-map',
   templateUrl: './map.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MapComponent {
   text = 'This is Map';
