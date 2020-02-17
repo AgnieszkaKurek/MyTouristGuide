@@ -5,9 +5,23 @@ import { TileListComponent } from './tile-list/tile-list.component';
 import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
-  { path: 'table', component: TableListComponent },
-  { path: 'tile', component: TileListComponent },
-  { path: 'map', component: MapComponent },
+  {
+    path: '',
+    redirectTo: 'table',
+    pathMatch: 'full',
+  },
+  {
+    path: 'table',
+    component: TableListComponent,
+  },
+  {
+    path: 'tile',
+    component: TileListComponent,
+  },
+  {
+    path: 'map',
+    component: MapComponent,
+  },
 ];
 
 @NgModule({
