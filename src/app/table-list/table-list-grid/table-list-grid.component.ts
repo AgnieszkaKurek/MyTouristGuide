@@ -26,6 +26,11 @@ export class TableListGridComponent implements OnInit {
     'lastVisited',
   ];
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   public ngOnInit(): void {
     this.dataSource.data = this.touristAttractions;
     this.dataSource.sort = this.sort;
