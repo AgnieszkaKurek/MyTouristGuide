@@ -12,6 +12,7 @@ import { TouristAttractionDb } from './tourist-attraction-db.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
+import { TableListGridComponent } from './table-list/table-list-grid/table-list-grid.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {MatTableModule} from '@angular/material/table';
     TableListComponent,
     TileListComponent,
     MapComponent,
+    TableListGridComponent,
   ],
   imports: [
     BrowserModule,
