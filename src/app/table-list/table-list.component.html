@@ -1,9 +1,11 @@
 <ng-container *ngIf='touristAttractions$ | async as touristAttractions '>
   <table mat-table
-         [dataSource]='touristAttractions'>
+         [dataSource]='touristAttractions'
+         matSort>
     <ng-container matColumnDef='name'>
       <th mat-header-cell
-          *matHeaderCellDef>
+          *matHeaderCellDef
+          mat-sort-header>
         Name
       </th>
       <td mat-cell
@@ -13,7 +15,8 @@
     </ng-container>
     <ng-container matColumnDef='category'>
       <th mat-header-cell
-          *matHeaderCellDef>
+          *matHeaderCellDef
+          mat-sort-header>
         Category
       </th>
       <td mat-cell
@@ -23,7 +26,8 @@
     </ng-container>
     <ng-container matColumnDef='place'>
       <th mat-header-cell
-          *matHeaderCellDef>
+          *matHeaderCellDef
+          mat-sort-header>
         Place
       </th>
       <td mat-cell
@@ -33,7 +37,8 @@
     </ng-container>
     <ng-container matColumnDef='lastVisited'>
       <th mat-header-cell
-          *matHeaderCellDef>
+          *matHeaderCellDef
+          mat-sort-header>
         Visit date
       </th>
       <td mat-cell

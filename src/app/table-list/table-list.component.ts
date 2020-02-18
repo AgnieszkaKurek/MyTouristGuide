@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 import { TouristAttractionService } from '../tourist-attraction.service';
 import { Observable } from 'rxjs';
 import { TouristAttraction } from '../models/tourist-attraction';
@@ -17,7 +17,6 @@ export class TableListComponent implements OnInit {
     'place',
     'lastVisited',
   ];
-
 
   public constructor(
     private touristAttractionService: TouristAttractionService,

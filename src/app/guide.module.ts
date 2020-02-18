@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TouristAttractionDb } from './tourist-attraction-db.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
@@ -26,6 +27,7 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientInMemoryWebApiModule.forRoot(TouristAttractionDb),
     BrowserAnimationsModule,
     MatTableModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [GuideComponent],
