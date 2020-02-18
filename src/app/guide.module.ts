@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import { TableListGridComponent } from './table-list/table-list-grid/table-list-grid.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TableListGridComponent } from './table-list/table-list-grid/table-list-
     MatSortModule,
   ],
   providers: [],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [GuideComponent],
 })
 export class GuideModule { }
