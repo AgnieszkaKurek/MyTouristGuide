@@ -6,7 +6,7 @@ import { Component, ChangeDetectionStrategy} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class FilterEventComponent {
+export class FilterComponent {
 
   public onKeyUp(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
