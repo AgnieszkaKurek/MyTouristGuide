@@ -14,6 +14,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TableListGridComponent } from './table-list/table-list-grid/table-list-grid.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FilterEventComponent } from './filter-event/filter-event.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     TileListComponent,
     MapComponent,
     TableListGridComponent,
+    FilterEventComponent, // bad name - it doesn't filter revents
   ],
   imports: [
     BrowserModule,

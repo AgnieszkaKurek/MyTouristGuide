@@ -26,9 +26,8 @@ export class TableListGridComponent implements OnInit {
     'lastVisited',
   ];
 
-  public applyFilter(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
-    this.dataSource.filter = filterValue;
+  public filter(value: string): void { // change it to be type script setter
+    this.dataSource.filter = value;
   }
 
   public ngOnInit(): void {
