@@ -8,7 +8,7 @@ import { TouristAttraction } from './models/tourist-attraction';
 })
 export class TouristAttractionDb implements InMemoryDbService {
 
-  public createDb() {
+  public createDb(): any {
     return {
       touristAttractions: this.getTouristAttractions(),
     };

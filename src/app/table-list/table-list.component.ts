@@ -16,7 +16,7 @@ export class TableListComponent implements OnInit {
     private touristAttractionService: TouristAttractionService,
   ) { }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.touristAttractions$ = this.touristAttractionService.getTouristAttractions();
   }
 
