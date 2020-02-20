@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { TouristAttraction } from './../models/tourist-attraction';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 import { TouristAttractionService } from '../tourist-attraction.service';
 
 @Component({
@@ -15,6 +15,10 @@ export class TableListComponent implements OnInit {
   public constructor(
     private touristAttractionService: TouristAttractionService,
   ) { }
+
+  public onFilterChanged(filterValue: string): void {
+    console.log(filterValue);
+  }
 
   public ngOnInit(): void {
     this.touristAttractions$ = this.touristAttractionService.getTouristAttractions();

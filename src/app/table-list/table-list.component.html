@@ -1,5 +1,5 @@
 <ng-container *ngIf='touristAttractions$ | async as touristAttractions'>
-  <tg-filter>
+  <tg-filter (filterChanged)="onFilterChanged($event)">
   </tg-filter>
   <tg-table-list-grid [touristAttractions]="touristAttractions">
   </tg-table-list-grid>
