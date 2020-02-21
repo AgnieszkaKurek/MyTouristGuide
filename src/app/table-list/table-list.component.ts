@@ -1,7 +1,6 @@
-import { TableListGridComponent } from './table-list-grid/table-list-grid.component';
 import { Observable } from 'rxjs';
 import { TouristAttraction } from './../models/tourist-attraction';
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TouristAttractionService } from '../tourist-attraction.service';
 
 @Component({
