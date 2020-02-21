@@ -1,3 +1,4 @@
+import { TableListGridComponent } from './table-list-grid/table-list-grid.component';
 import { Observable } from 'rxjs';
 import { TouristAttraction } from './../models/tourist-attraction';
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
@@ -10,6 +11,9 @@ import { TouristAttractionService } from '../tourist-attraction.service';
 })
 export class TableListComponent implements OnInit {
 
+  @ViewChild(TableListGridComponent)
+  private grid: TableListGridComponent;
+
   public touristAttractions$: Observable<TouristAttraction[]>;
 
   public constructor(
@@ -18,7 +22,7 @@ export class TableListComponent implements OnInit {
   }
 
   public onFilterChanged(filterValue: string): void {
-    console.log(filterValue);
+    this.grid.filter(filterValue);
   }
 
   public ngOnInit(): void {
