@@ -14,7 +14,8 @@ export class TableListComponent implements OnInit {
 
   public constructor(
     private touristAttractionService: TouristAttractionService,
-  ) { }
+  ) {
+  }
 
   public onFilterChanged(filterValue: string): void {
     console.log(filterValue);
