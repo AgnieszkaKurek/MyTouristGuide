@@ -9,7 +9,7 @@ import { shareReplay } from 'rxjs/operators';
 })
 export class TouristAttractionService {
 
-  private touristAttractionsUrl = 'api/touristAttractions';
+  private touristAttractionsUrl: string = 'api/touristAttractions';
 
   public constructor(
     private http: HttpClient,

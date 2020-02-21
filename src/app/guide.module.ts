@@ -10,10 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TouristAttractionDb } from './tourist-attraction-db.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSortModule} from '@angular/material/sort';
-import {MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 import { TableListGridComponent } from './table-list/table-list-grid/table-list-grid.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     TileListComponent,
     MapComponent,
     TableListGridComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     MatSortModule,
   ],
   providers: [],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [GuideComponent],
 })
 export class GuideModule { }

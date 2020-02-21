@@ -17,6 +17,11 @@ export class TableListGridComponent implements OnInit {
   @Input()
   public touristAttractions: TouristAttraction[];
 
+  @Input()
+  public set filter(value: string) {
+    this.dataSource.filter = value;
+  }
+
   public dataSource: MatTableDataSource<TouristAttraction> = new MatTableDataSource([]);
 
   public columns: string[] = [
@@ -25,11 +30,6 @@ export class TableListGridComponent implements OnInit {
     'place',
     'lastVisited',
   ];
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
 
   public ngOnInit(): void {
     this.dataSource.data = this.touristAttractions;

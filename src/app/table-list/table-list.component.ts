@@ -14,9 +14,10 @@ export class TableListComponent implements OnInit {
 
   public constructor(
     private touristAttractionService: TouristAttractionService,
-  ) { }
+  ) {
+  }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.touristAttractions$ = this.touristAttractionService.getTouristAttractions();
   }
 
