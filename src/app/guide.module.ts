@@ -35,7 +35,6 @@ import { FilterComponent } from './filter/filter.component';
     MatSortModule,
   ],
   providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [GuideComponent],
 })
 export class GuideModule { }
