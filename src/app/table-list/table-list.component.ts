@@ -11,18 +11,11 @@ import { TouristAttractionService } from '../tourist-attraction.service';
 })
 export class TableListComponent implements OnInit {
 
-  @ViewChild(TableListGridComponent)
-  private grid: TableListGridComponent;
-
   public touristAttractions$: Observable<TouristAttraction[]>;
 
   public constructor(
     private touristAttractionService: TouristAttractionService,
   ) {
-  }
-
-  public onFilterChanged(filterValue: string): void {
-    this.grid.filter(filterValue);
   }
 
   public ngOnInit(): void {
