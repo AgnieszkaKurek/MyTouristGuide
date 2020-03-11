@@ -1,8 +1,11 @@
 <div>
   <nav>
-    <a routerLink="/table">List</a>
-    <a routerLink="/tile">Tiles</a>
-    <a routerLink="/map">Map</a>
+    <a [routerLinkActive]="['active']"
+       routerLink="/table">List</a>
+    <a [routerLinkActive]="['active']"
+       routerLink="/tile">Tiles</a>
+    <a [routerLinkActive]="['active']"
+       routerLink="/map">Map</a>
   </nav>
   <router-outlet></router-outlet>
 </div>
