@@ -13,3 +13,7 @@ nav a:hover {
   color: $pastelColour;
   background-color: $mediumColour;
 }
+
+nav a.active {
+  background-color: $lightPastelColor;
+}
