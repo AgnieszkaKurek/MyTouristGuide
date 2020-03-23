@@ -15,6 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { TableListGridComponent } from './table-list/table-list-grid/table-list-grid.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FilterComponent } from './filter/filter.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FilterComponent } from './filter/filter.component';
     BrowserAnimationsModule,
     MatTableModule,
     MatSortModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [GuideComponent],
