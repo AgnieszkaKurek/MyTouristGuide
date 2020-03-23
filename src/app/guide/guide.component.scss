@@ -1,19 +1,7 @@
 @import "../../assets/variables.scss";
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  display: inline-block;
-  background-color: $brightColour;
-  border-bottom: solid;
-  border-color: $darkColour;
-}
-nav a:hover {
-  color: $pastelColour;
-  background-color: $mediumColour;
-}
 
-nav a.active {
-  background-color: $lightPastelColor;
+.active {
+  font-weight: bold;
+  color: $active;
+  color: mat-color($dark-accent, darker);
 }
