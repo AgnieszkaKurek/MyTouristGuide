@@ -1,7 +1,9 @@
 import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Subscription, Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import { TouristAttractionListSettingService } from '../tourist-attraction-list-setting.service';
+import { TouristAttractionListSetting } from '../tourist-attraction-list-setting.service'
 
 @Component({
   selector: 'tg-filter',
@@ -14,10 +16,20 @@ export class FilterComponent implements OnInit, OnDestroy {
 
   public form: FormGroup;
 
+  public settings$: Observable<TouristAttractionListSetting>;
+
+  public constructor(
+    private settingsService: TouristAttractionListSettingService,
+  ) {
+  }
+
   public ngOnInit(): void {
     this.form = new FormGroup({
       filter: new FormControl(),
     });
+    this.settings$ = this.settingsService.settingsChanged.pipe(
+      tap(settings => this.form.patchValue({ filter: settings.filter }, { emitEvent: false })),
+    );
     this.sub = this.form.get('filter').valueChanges.pipe(
       distinctUntilChanged(),
       debounceTime(300),
