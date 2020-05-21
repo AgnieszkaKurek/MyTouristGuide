@@ -34,7 +34,7 @@ export class FilterComponent implements OnInit, OnDestroy {
       distinctUntilChanged(),
       debounceTime(300),
     ).subscribe(filter => {
-      console.log(`filter changed to: ${filter}`);
+      this.settingsService.filter = filter;
     })
   }
 
