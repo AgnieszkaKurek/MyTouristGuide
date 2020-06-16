@@ -1,4 +1,7 @@
-import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { FilterService } from './filter.service';
 
 @Component({
   selector: 'tg-filter',
@@ -6,12 +9,11 @@ import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angul
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterComponent {
+  public form: FormGroup = this.filterService.form;
+  public filter$: Observable<string> = this.filterService.filter;
 
-  @Output()
-  public filterChanged: EventEmitter<string> = new EventEmitter<string>();
-
-  public onKeyUp(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value.trim();
-    this.filterChanged.emit(filterValue);
+  public constructor(
+    private filterService: FilterService,
+  ) {
   }
 }

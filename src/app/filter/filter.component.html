@@ -1,3 +1,9 @@
-Filter
-<input matInput
-       (keyup)='onKeyUp($event)' />
+<form *ngIf='{filter: filter$ | async}'
+      [formGroup]="form">
+  <mat-form-field>
+    <input type="text"
+           matInput
+           placeholder="Tourist atraction"
+           formControlName="filter">
+  </mat-form-field>
+</form>

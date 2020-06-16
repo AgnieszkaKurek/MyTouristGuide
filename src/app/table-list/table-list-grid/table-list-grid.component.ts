@@ -15,11 +15,8 @@ export class TableListGridComponent implements OnInit {
   private sort: MatSort;
 
   @Input()
-  public touristAttractions: TouristAttraction[];
-
-  @Input()
-  public set filter(value: string) {
-    this.dataSource.filter = value;
+  public set touristAttractions(data: TouristAttraction[]) {
+    this.dataSource.data = data;
   }
 
   public dataSource: MatTableDataSource<TouristAttraction> = new MatTableDataSource([]);
@@ -32,15 +29,6 @@ export class TableListGridComponent implements OnInit {
   ];
 
   public ngOnInit(): void {
-    this.dataSource.data = this.touristAttractions;
     this.dataSource.sort = this.sort;
-    this.dataSource.filterPredicate = this.filterPredicate;
   }
-
-  private filterPredicate(data: TouristAttraction, filter: string): boolean {
-    filter = filter.toLocaleLowerCase();
-    const { lastVisited, ...dataToFilter } = data;
-    return Object.values(dataToFilter).some(value => value?.toLocaleLowerCase().includes(filter));
-  }
-
 }
