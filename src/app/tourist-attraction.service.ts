@@ -28,7 +28,7 @@ export class TouristAttractionService {
       this.checkString(attraction.name, filter) ||
       this.checkString(attraction.place, filter));
   }
-  private checkString(attraction: string, filter: string): any {
+  private checkString(attraction: string, filter: string): boolean {
     return attraction.toLocaleLowerCase().includes(filter);
   }
 }
