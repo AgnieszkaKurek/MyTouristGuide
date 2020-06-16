@@ -15,7 +15,9 @@ export class TableListGridComponent implements OnInit {
   private sort: MatSort;
 
   @Input()
-  public touristAttractions: TouristAttraction[];
+  public set touristAttractions(data: TouristAttraction[]) {
+    this.dataSource.data = data;
+  }
 
   public dataSource: MatTableDataSource<TouristAttraction> = new MatTableDataSource([]);
 
@@ -27,7 +29,6 @@ export class TableListGridComponent implements OnInit {
   ];
 
   public ngOnInit(): void {
-    this.dataSource.data = this.touristAttractions;
     this.dataSource.sort = this.sort;
   }
 }

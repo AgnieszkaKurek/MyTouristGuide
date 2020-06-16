@@ -8,7 +8,6 @@ import { switchMap } from 'rxjs/operators';
 @Component({
   selector: 'tg-table-list',
   templateUrl: './table-list.component.html',
-  styleUrls: ['./table-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableListComponent implements OnInit {
@@ -23,7 +22,7 @@ export class TableListComponent implements OnInit {
 
   public ngOnInit(): void {
     this.touristAttractions$ = this._settingsService.settingsChanged.pipe(
-      switchMap((setting) => this._touristAttractionService.getTouristAttractions(setting)),
+      switchMap(setting => this._touristAttractionService.getTouristAttractions(setting)),
     )
   }
 }

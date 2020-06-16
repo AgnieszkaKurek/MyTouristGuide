@@ -1,46 +1,19 @@
-import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Subscription, Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
-import { TouristAttractionListSettingService } from '../tourist-attraction-list-setting.service';
-import { TouristAttractionListSetting } from '../tourist-attraction-list-setting.service'
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { FilterService } from './filter.service';
 
 @Component({
   selector: 'tg-filter',
   templateUrl: './filter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilterComponent implements OnInit, OnDestroy {
-
-  private sub: Subscription;
-
-  public form: FormGroup;
-
-  public settings$: Observable<TouristAttractionListSetting>;
+export class FilterComponent {
+  public form: FormGroup = this.filterService.form;
+  public filter$: Observable<string> = this.filterService.filter;
 
   public constructor(
-    private settingsService: TouristAttractionListSettingService,
+    private filterService: FilterService,
   ) {
-  }
-
-  public ngOnInit(): void {
-    this.form = new FormGroup({
-      filter: new FormControl(),
-    });
-    this.settings$ = this.settingsService.settingsChanged.pipe(
-      tap(settings => this.form.patchValue({ filter: settings.filter }, { emitEvent: false })),
-    );
-    this.sub = this.form.get('filter').valueChanges.pipe(
-      distinctUntilChanged(),
-      debounceTime(300),
-    ).subscribe(filter => {
-      this.settingsService.filter = filter;
-    })
-  }
-
-  public ngOnDestroy(): void {
-    if (this.sub) {
-      this.sub.unsubscribe();
-    }
   }
 }

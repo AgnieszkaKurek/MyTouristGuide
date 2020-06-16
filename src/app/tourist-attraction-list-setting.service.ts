@@ -21,7 +21,7 @@ export class TouristAttractionListSettingService {
   public set filter(filter: string) {
     this._setting = {
       ...this._setting,
-      filter,
+      filter: filter.toLocaleLowerCase(),
     };
     this._settingsChangedSource.next(this._setting);
   };
