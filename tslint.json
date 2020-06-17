@@ -67,13 +67,6 @@
       true,
       "single"
     ],
-    "trailing-comma": [
-      true,
-      {
-        "multiline": "always",
-        "singleline": "never"
-      }
-    ],
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
@@ -87,7 +80,12 @@
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
     "prefer-on-push-component-change-detection": true,
-    "typedef": [true, "call-signature", "parameter", "member-variable-declaration"]
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "member-variable-declaration"
+    ]
   },
   "rulesDirectory": [
     "codelyzer"

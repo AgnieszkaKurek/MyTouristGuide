@@ -24,11 +24,14 @@ export class TouristAttractionService {
     );
   }
   private filterTouristAttraction(data: TouristAttraction[], filter: string): TouristAttraction[] {
-    return data.filter(attraction => this.checkString(attraction.category, filter) ||
-      this.checkString(attraction.name, filter) ||
-      this.checkString(attraction.place, filter));
+    return data.filter(attraction =>
+      this.contains(attraction.category, filter) ||
+      this.contains(attraction.name, filter) ||
+      this.contains(attraction.place, filter)
+    );
   }
-  private checkString(attraction: string, filter: string): boolean {
-    return attraction.toLocaleLowerCase().includes(filter);
+
+  private contains(field: string, filter: string): boolean {
+    return field.toLocaleLowerCase().includes(filter);
   }
 }
