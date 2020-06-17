@@ -24,10 +24,9 @@ export class TouristAttractionService {
     );
   }
   private filterTouristAttraction(data: TouristAttraction[], filter: string): TouristAttraction[] {
-    return data.filter(attraction =>
-      this.contains(attraction.category, filter) ||
-      this.contains(attraction.name, filter) ||
-      this.contains(attraction.place, filter)
+    return data.filter(attraction => this.contains(attraction.category, filter)
+      || this.contains(attraction.name, filter)
+      || this.contains(attraction.place, filter)
     );
   }
 
