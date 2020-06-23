@@ -1,0 +1,8 @@
+<ng-container *ngIf='settings$ | async as settings'>
+  <mat-paginator [length]="count"
+                 [pageIndex]="settings.pageNumber -1"
+                 [pageSize]="settings.pageSize"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 (page)="onPageChange($event)">
+  </mat-paginator>
+</ng-container>

@@ -17,6 +17,8 @@ import { FilterComponent } from './filter/filter.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TableListPaginatorComponent } from './table-list/table-list-paginator/table-list-paginator.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MapComponent,
     TableListGridComponent,
     FilterComponent,
+    TableListPaginatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [GuideComponent],
