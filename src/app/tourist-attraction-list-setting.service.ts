@@ -15,7 +15,7 @@ export class TouristAttractionListSettingService {
   private _setting: TouristAttractionListSetting = {
     filter: '',
     pageSize: 10,
-    pageNumber: 1,
+    pageNumber: 0,
   }
   private _settingsChangedSource: BehaviorSubject<TouristAttractionListSetting> =
     new BehaviorSubject<TouristAttractionListSetting>(this._setting);
@@ -25,7 +25,7 @@ export class TouristAttractionListSettingService {
   public set filter(filter: string) {
     this._setting = {
       ...this._setting,
-      pageNumber: 1,
+      pageNumber: 0,
       filter: filter.toLocaleLowerCase(),
     };
     this._settingsChangedSource.next(this._setting);

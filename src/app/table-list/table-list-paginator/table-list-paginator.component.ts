@@ -21,6 +21,6 @@ export class TableListPaginatorComponent implements OnInit {
   }
 
   public onPageChange(event: PageEvent): void {
-    this.settingsService.setPageSettings(event.pageSize, event.pageIndex + 1);
+    this.settingsService.setPageSettings(event.pageSize, event.pageIndex);
   }
 }
