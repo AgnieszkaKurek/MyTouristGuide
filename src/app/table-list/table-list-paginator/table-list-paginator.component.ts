@@ -11,6 +11,9 @@ import { PageEvent } from '@angular/material/paginator';
 export class TableListPaginatorComponent implements OnInit {
   public settings$: Observable<TouristAttractionListSetting>;
 
+  @Input()
+  public numberOfAttractions: number;
+
   public constructor(
     private settingsService: TouristAttractionListSettingService,
   ) {
