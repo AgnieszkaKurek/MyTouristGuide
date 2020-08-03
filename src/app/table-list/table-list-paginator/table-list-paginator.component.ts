@@ -12,7 +12,7 @@ export class TableListPaginatorComponent implements OnInit {
   public settings$: Observable<TouristAttractionListSetting>;
 
   @Input()
-  public numberOfAttractions: number;
+  public length: number;
 
   public constructor(
     private settingsService: TouristAttractionListSettingService,

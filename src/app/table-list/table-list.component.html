@@ -5,7 +5,7 @@
     <tg-table-list-grid *ngIf='touristAttractions.length'
                         [touristAttractions]="touristAttractions">
     </tg-table-list-grid>
-    <tg-table-list-paginator [numberOfAttractions]="touristAttractions">
+    <tg-table-list-paginator [length]="touristAttractions.length">
     </tg-table-list-paginator>
   </ng-container>
 </ng-container>
