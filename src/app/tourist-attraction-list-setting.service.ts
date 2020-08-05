@@ -14,7 +14,7 @@ export class TouristAttractionListSettingService {
 
   private setting: TouristAttractionListSetting = {
     filter: '',
-    pageSize: 10,
+    pageSize: 5,
     pageNumber: 0,
   };
   private settingsChangedSource: BehaviorSubject<TouristAttractionListSetting> =
@@ -25,7 +25,7 @@ export class TouristAttractionListSettingService {
   public set filter(filter: string) {
     this.setting = {
       ...this.setting,
-      pageNumber: 1,
+      pageNumber: 0,
       filter: filter.toLocaleLowerCase(),
     };
     this.settingsChangedSource.next(this.setting);
