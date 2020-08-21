@@ -26,14 +26,11 @@ export class TouristAttractionService {
   }
 
   private filterAndPaginate(items: TouristAttraction[], setting: TouristAttractionListSetting): TouristAttractionsListInfo {
-    const touristAttractionsListInfo: TouristAttractionsListInfo = {
-      lengthAfterFiltering: items.length,
-      attractions: items,
+    const filteredItems = this.filter(items, setting.filter);
+    return {
+      lengthAfterFiltering: filteredItems.length,
+      attractions: this.paginate(filteredItems, setting.pageSize),
     };
-    touristAttractionsListInfo.attractions = this.filter(items, setting.filter);
-    touristAttractionsListInfo.lengthAfterFiltering = touristAttractionsListInfo.attractions.length;
-    touristAttractionsListInfo.attractions = this.paginate(touristAttractionsListInfo.attractions, setting.pageSize);
-    return touristAttractionsListInfo;
   }
 
   private filter(data: TouristAttraction[], filter: string): TouristAttraction[] {
