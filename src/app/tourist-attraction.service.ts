@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TouristAttraction } from './models/tourist-attraction';
 import { TouristAttractionListSetting } from './tourist-attraction-list-setting.service';
-import { shareReplay, map, tap } from 'rxjs/operators';
-import { getSyntheticPropertyName } from '@angular/compiler/src/render3/util';
+import { shareReplay, map } from 'rxjs/operators';
+import { TouristAttractionsListInfo } from './models/tourist-attractions-list-info';
 
 @Injectable({
   providedIn: 'root',
@@ -18,12 +18,22 @@ export class TouristAttractionService {
   ) {
   }
 
-  public getTouristAttractions(setting: TouristAttractionListSetting): Observable<TouristAttraction[]> {
+  public getTouristAttractions(setting: TouristAttractionListSetting): Observable<TouristAttractionsListInfo> {
     return this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
       shareReplay(),
-      map((data: TouristAttraction[]) => this.filter(data, setting.filter)),
-      map((data: TouristAttraction[]) => this.paginate(data, setting.pageSize)),
+      map((data: TouristAttraction[]) => this.filterAndPaginate(data, setting)),
     );
+  }
+
+  private filterAndPaginate(items: TouristAttraction[], setting: TouristAttractionListSetting): TouristAttractionsListInfo {
+    const touristAttractionsListInfo: TouristAttractionsListInfo = {
+      lengthAfterFiltering: items.length,
+      attractions: items,
+    };
+    touristAttractionsListInfo.attractions = this.filter(items, setting.filter);
+    touristAttractionsListInfo.lengthAfterFiltering = touristAttractionsListInfo.attractions.length;
+    touristAttractionsListInfo.attractions = this.paginate(touristAttractionsListInfo.attractions, setting.pageSize);
+    return touristAttractionsListInfo;
   }
 
   private filter(data: TouristAttraction[], filter: string): TouristAttraction[] {
@@ -35,6 +45,6 @@ export class TouristAttractionService {
   }
 
   private paginate(data: TouristAttraction[], pageSize: number): TouristAttraction[] {
-      return data.slice(0, pageSize);
+    return data.slice(0, pageSize);
   }
 }
