@@ -17,6 +17,7 @@ export class TouristAttractionDb implements InMemoryDbService {
   private getTouristAttractions(): TouristAttraction[] {
     return [
       {
+        id: 1,
         category: TouristAttractionCategory.Castle,
         name: 'Bolkow Castle Museum',
         place: 'Bolkow',
@@ -30,6 +31,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         lastVisited: new Date('07/14/2019'),
       },
       {
+        id: 2,
         category: TouristAttractionCategory.MusicFestival,
         name: 'Castle Party',
         website: 'http://www.zamek-bolkow.info.pl/',
@@ -43,6 +45,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         lastVisited: new Date('07/14/2019'),
       },
       {
+        id: 3,
         category: TouristAttractionCategory.OpenAirMuseum,
         name: 'Center of Slavs and Vikings',
         website: 'https://jomsborg-vineta.com/',
@@ -56,6 +59,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         lastVisited: new Date('08/17/2019'),
       },
       {
+        id: 4,
         category: TouristAttractionCategory.AmusementPark,
         name: 'American Theme Park TWINPIGS',
         website: 'https://twinpigs.zory.pl/',
@@ -69,6 +73,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         lastVisited: new Date('09/30/2017'),
       },
       {
+        id: 5,
         category: TouristAttractionCategory.HauntedHause,
         name: 'Lost Souls Alley',
         website: 'https://lostsoulsalley.pl/',
@@ -82,6 +87,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         lastVisited: new Date('07/02/2017'),
       },
       {
+        id: 6,
         category: TouristAttractionCategory.SportFacility,
         name: 'National Stadium PGN Narodowy',
         website: 'https://www.pgenarodowy.pl/',
@@ -95,6 +101,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         lastVisited: new Date('10/13/2019'),
       },
       {
+        id: 7,
         category: TouristAttractionCategory.Zoo,
         name: 'Zoo Wroclaw Afrykarium',
         website: 'http://zoo.wroclaw.pl/',
