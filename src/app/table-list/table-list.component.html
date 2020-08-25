@@ -3,7 +3,7 @@
 <ng-container *ngIf='touristAttractions$ | async as touristAttractions'>
   <ng-container *ngIf='touristAttractions.lengthAfterFiltering'>
     <tg-table-list-grid *ngIf='touristAttractions.lengthAfterFiltering'
-                        [touristAttractions]="touristAttractions.attractions">
+                        [touristAttractions]="touristAttractions.currentPageAttractions">
     </tg-table-list-grid>
     <tg-table-list-paginator [length]="touristAttractions.lengthAfterFiltering">
     </tg-table-list-paginator>

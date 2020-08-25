@@ -29,7 +29,7 @@ export class TouristAttractionService {
     const filteredItems = this.filter(items, setting.filter);
     return {
       lengthAfterFiltering: filteredItems.length,
-      attractions: this.paginate(filteredItems, setting.pageSize),
+      currentPageAttractions: this.getPageAttractions(filteredItems, setting.pageSize, setting.pageNumber),
     };
   }
 
@@ -41,7 +41,9 @@ export class TouristAttractionService {
     ].some(field => field.toLocaleLowerCase().includes(filter)));
   }
 
-  private paginate(data: TouristAttraction[], pageSize: number): TouristAttraction[] {
-    return data.slice(0, pageSize);
+  private getPageAttractions(data: TouristAttraction[], pageSize: number, pageNumber: number): TouristAttraction[] {
+    const fromIndex = pageSize * pageNumber;
+    const toIndex = pageSize * (pageNumber + 1);
+    return data.slice(fromIndex, toIndex);
   }
 }
