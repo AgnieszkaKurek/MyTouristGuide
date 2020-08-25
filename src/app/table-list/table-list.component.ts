@@ -1,9 +1,9 @@
 import { Observable } from 'rxjs';
-import { TouristAttraction } from './../models/tourist-attraction';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TouristAttractionService } from '../tourist-attraction.service';
 import { TouristAttractionListSettingService } from '../tourist-attraction-list-setting.service';
 import { switchMap } from 'rxjs/operators';
+import { TouristAttractionsListInfo } from '../models/tourist-attractions-list-info';
 
 @Component({
   selector: 'tg-table-list',
@@ -12,7 +12,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class TableListComponent implements OnInit {
 
-  public touristAttractions$: Observable<TouristAttraction[]>;
+  public touristAttractions$: Observable<TouristAttractionsListInfo>;
 
   public constructor(
     private touristAttractionService: TouristAttractionService,

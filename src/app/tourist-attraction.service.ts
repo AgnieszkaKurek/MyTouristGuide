@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { TouristAttraction } from './models/tourist-attraction';
 import { TouristAttractionListSetting } from './tourist-attraction-list-setting.service';
 import { shareReplay, map } from 'rxjs/operators';
+import { TouristAttractionsListInfo } from './models/tourist-attractions-list-info';
 
 @Injectable({
   providedIn: 'root',
@@ -17,17 +18,32 @@ export class TouristAttractionService {
   ) {
   }
 
-  public getTouristAttractions(setting: TouristAttractionListSetting): Observable<TouristAttraction[]> {
+  public getTouristAttractions(setting: TouristAttractionListSetting): Observable<TouristAttractionsListInfo> {
     return this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
       shareReplay(),
-      map((data: TouristAttraction[]) => this.filterTouristAttraction(data, setting.filter)),
+      map((data: TouristAttraction[]) => this.filterAndPaginate(data, setting)),
     );
   }
-  private filterTouristAttraction(data: TouristAttraction[], filter: string): TouristAttraction[] {
+
+  private filterAndPaginate(items: TouristAttraction[], setting: TouristAttractionListSetting): TouristAttractionsListInfo {
+    const filteredItems = this.filter(items, setting.filter);
+    return {
+      lengthAfterFiltering: filteredItems.length,
+      currentPageAttractions: this.getPageAttractions(filteredItems, setting.pageSize, setting.pageNumber),
+    };
+  }
+
+  private filter(data: TouristAttraction[], filter: string): TouristAttraction[] {
     return data.filter(attraction => [
       attraction.category,
       attraction.name,
       attraction.place,
     ].some(field => field.toLocaleLowerCase().includes(filter)));
+  }
+
+  private getPageAttractions(data: TouristAttraction[], pageSize: number, pageNumber: number): TouristAttraction[] {
+    const fromIndex = pageSize * pageNumber;
+    const toIndex = pageSize * (pageNumber + 1);
+    return data.slice(fromIndex, toIndex);
   }
 }

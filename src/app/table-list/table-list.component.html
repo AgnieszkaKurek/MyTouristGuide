@@ -1,7 +1,11 @@
 <tg-filter>
 </tg-filter>
 <ng-container *ngIf='touristAttractions$ | async as touristAttractions'>
-  <tg-table-list-grid *ngIf='touristAttractions.length'
-                      [touristAttractions]="touristAttractions">
-  </tg-table-list-grid>
+  <ng-container *ngIf='touristAttractions.lengthAfterFiltering'>
+    <tg-table-list-grid *ngIf='touristAttractions.lengthAfterFiltering'
+                        [touristAttractions]="touristAttractions.currentPageAttractions">
+    </tg-table-list-grid>
+    <tg-table-list-paginator [length]="touristAttractions.lengthAfterFiltering">
+    </tg-table-list-paginator>
+  </ng-container>
 </ng-container>
