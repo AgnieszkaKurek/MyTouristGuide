@@ -26,6 +26,7 @@ export class TableListGridComponent implements OnInit {
     'category',
     'place',
     'lastVisited',
+    'details',
   ];
 
   public ngOnInit(): void {
