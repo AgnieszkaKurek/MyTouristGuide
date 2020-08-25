@@ -5,10 +5,10 @@ export interface TouristAttraction {
   id: number;
   category: TouristAttractionCategory;
   name: string;
+  description: string;
   website: string;
   place: string;
   address: TouristAttractionAddress;
-  voivodeship: string;
   euroregion: string;
   lastVisited: Date;
 }
