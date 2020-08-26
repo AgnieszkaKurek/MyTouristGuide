@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { GuideComponent } from './guide/guide.component';
@@ -19,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TableListPaginatorComponent } from './table-list/table-list-paginator/table-list-paginator.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { TouristAttractionDetailComponent } from './tourist-attraction-detail/tourist-attraction-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     TableListGridComponent,
     FilterComponent,
     TableListPaginatorComponent,
+    TouristAttractionDetailComponent,
   ],
   imports: [
     BrowserModule,
