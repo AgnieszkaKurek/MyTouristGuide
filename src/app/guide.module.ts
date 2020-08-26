@@ -19,6 +19,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TableListPaginatorComponent } from './table-list/table-list-paginator/table-list-paginator.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TouristAttractionDetailComponent } from './tourist-attraction-detail/tourist-attraction-detail.component';
+import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { TouristAttractionDetailComponent } from './tourist-attraction-detail/to
     FormsModule,
     ReactiveFormsModule,
     MatPaginatorModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [GuideComponent],

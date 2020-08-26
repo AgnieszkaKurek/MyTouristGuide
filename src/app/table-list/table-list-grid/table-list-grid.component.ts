@@ -36,7 +36,7 @@ export class TableListGridComponent implements OnInit {
   public ngOnInit(): void {
     this.dataSource.sort = this.sort;
   }
-  public showDetails(): any {
-    this.router.navigateByUrl('attraction/detail');
+  public showDetails(id: number): any {
+    this.router.navigate(['attraction', id]);
   }
 }

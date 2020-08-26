@@ -22,7 +22,7 @@ export class TableListComponent implements OnInit {
 
   public ngOnInit(): void {
     this.touristAttractions$ = this.settingsService.settingsChanged.pipe(
-      switchMap(setting => this.touristAttractionService.getTouristAttractions(setting)),
+      switchMap(setting => this.touristAttractionService.getTouristAttractions$(setting)),
     );
   }
 }
