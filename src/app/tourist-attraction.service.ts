@@ -18,10 +18,16 @@ export class TouristAttractionService {
   ) {
   }
 
-  public getTouristAttractions(setting: TouristAttractionListSetting): Observable<TouristAttractionsListInfo> {
+  public getTouristAttractions$(setting: TouristAttractionListSetting): Observable<TouristAttractionsListInfo> {
     return this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
       shareReplay(),
       map((data: TouristAttraction[]) => this.filterAndPaginate(data, setting)),
+    );
+  }
+
+  public getTouristAttractionById$(id: number): Observable<TouristAttraction> {
+    return this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
+      map(list => list.find(x => x.id === id)),
     );
   }
 

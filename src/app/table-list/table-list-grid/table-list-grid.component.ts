@@ -2,6 +2,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { TouristAttraction } from './../../models/tourist-attraction';
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Input } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tg-table-list-grid',
@@ -26,9 +27,16 @@ export class TableListGridComponent implements OnInit {
     'category',
     'place',
     'lastVisited',
+    'details',
   ];
+  public constructor(
+    private router: Router,
+  ) { }
 
   public ngOnInit(): void {
     this.dataSource.sort = this.sort;
+  }
+  public showDetails(id: number): any {
+    this.router.navigate(['attraction', id]);
   }
 }

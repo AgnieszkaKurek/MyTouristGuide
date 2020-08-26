@@ -1,3 +1,4 @@
+import { TouristAttractionDetailComponent } from './tourist-attraction-detail/tourist-attraction-detail.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TableListComponent } from './table-list/table-list.component';
@@ -7,20 +8,24 @@ import { MapComponent } from './map/map.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'table',
+    redirectTo: 'attractions/list',
     pathMatch: 'full',
   },
   {
-    path: 'table',
+    path: 'attractions/list',
     component: TableListComponent,
   },
   {
-    path: 'tile',
+    path: 'attractions/tile',
     component: TileListComponent,
   },
   {
-    path: 'map',
+    path: 'attractions/map',
     component: MapComponent,
+  },
+  {
+    path: 'attraction/:id',
+    component: TouristAttractionDetailComponent,
   },
 ];
 
