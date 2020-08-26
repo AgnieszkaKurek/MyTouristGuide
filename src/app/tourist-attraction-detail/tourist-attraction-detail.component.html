@@ -1,4 +1,3 @@
-
 <ng-container *ngIf='touristAttraction$ | async as touristAttraction'>
   <mat-card>
     <mat-card-content>
@@ -19,5 +18,10 @@
       <mat-list-item>{{touristAttraction.lastVisited | date:'longDate'}}</mat-list-item>
       <mat-list-item>{{touristAttraction.euroregion}}</mat-list-item>
     </mat-card-content>
+    <button mat-raised-button
+            (click)='backToTheList()'>
+      Back to the list
+    </button>
   </mat-card>
+
 </ng-container>
