@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TouristAttraction } from './models/tourist-attraction';
 import { TouristAttractionListSetting } from './tourist-attraction-list-setting.service';
-import { shareReplay, map } from 'rxjs/operators';
+import { shareReplay, map, tap } from 'rxjs/operators';
 import { TouristAttractionsListInfo } from './models/tourist-attractions-list-info';
 
 @Injectable({
@@ -12,6 +12,7 @@ import { TouristAttractionsListInfo } from './models/tourist-attractions-list-in
 export class TouristAttractionService {
 
   private touristAttractionsUrl: string = 'api/touristAttractions';
+  private cache: Observable<TouristAttraction[]>;
 
   public constructor(
     private http: HttpClient,
@@ -19,16 +20,24 @@ export class TouristAttractionService {
   }
 
   public getTouristAttractions$(setting: TouristAttractionListSetting): Observable<TouristAttractionsListInfo> {
-    return this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
-      shareReplay(),
+    return this.touristAttractions$.pipe(
       map((data: TouristAttraction[]) => this.filterAndPaginate(data, setting)),
     );
   }
 
   public getTouristAttractionById$(id: number): Observable<TouristAttraction> {
-    return this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
+    return this.touristAttractions$.pipe(
       map(list => list.find(x => x.id === id)),
     );
+  }
+
+  private get touristAttractions$(): Observable<TouristAttraction[]> {
+    if (!this.cache) {
+      this.cache = this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
+        shareReplay(),
+      );
+    }
+    return this.cache;
   }
 
   private filterAndPaginate(items: TouristAttraction[], setting: TouristAttractionListSetting): TouristAttractionsListInfo {
