@@ -1,4 +1,11 @@
+@import "../../../assets/variables.scss";
+
 .mat-cell,
 .mat-header-cell {
-  padding: 10px;
+  padding: $default-padding;
+}
+
+table {
+  width: $spaceing-m;
+  margin: $default-margin - $margin-alignment-size;
 }

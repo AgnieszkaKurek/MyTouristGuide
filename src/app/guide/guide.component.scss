@@ -1,7 +1,11 @@
 @import "../../assets/variables.scss";
 
+.nav {
+  margin: $default-margin;
+  margin-bottom: $default-margin + $margin-alignment-size;
+}
+
 .active {
   font-weight: bold;
   color: $active;
-  color: mat-color($dark-accent, darker);
 }

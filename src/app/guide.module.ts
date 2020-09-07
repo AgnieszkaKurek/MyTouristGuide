@@ -15,13 +15,14 @@ import { TableListGridComponent } from './table-list/table-list-grid/table-list-
 import { FilterComponent } from './filter/filter.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableListPaginatorComponent } from './table-list/table-list-paginator/table-list-paginator.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TouristAttractionDetailComponent } from './tourist-attraction-detail/tourist-attraction-detail.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { TouristAttractionAddressComponent } from './tourist-attraction-detail/tourist-attraction-address/tourist-attraction-address.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatListModule } from '@angular/material/list';
     FilterComponent,
     TableListPaginatorComponent,
     TouristAttractionDetailComponent,
+    TouristAttractionAddressComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,24 +1,45 @@
 <ng-container *ngIf='touristAttraction$ | async as touristAttraction'>
-  <mat-card>
+  <mat-card class="mat-card">
     <mat-card-content>
       <mat-list-item>
-        <mat-card-title>
-          {{touristAttraction.name}}
+        <mat-card-title class="card-tiltle">
+          <h1>{{touristAttraction.name}}</h1>
         </mat-card-title>
       </mat-list-item>
-      <mat-list-item>{{touristAttraction.category}}</mat-list-item>
-      <mat-list-item>{{touristAttraction.description}}</mat-list-item>
-      <mat-list-item>{{touristAttraction.website}}</mat-list-item>
-      <address>
-        <mat-list-item>{{touristAttraction.address.city}}</mat-list-item>
-        <mat-list-item>{{touristAttraction.address.street}}</mat-list-item>
-        <mat-list-item>{{touristAttraction.address.zipCode}}</mat-list-item>
-        <mat-list-item>{{touristAttraction.address.voivodeship}}</mat-list-item>
-      </address>
-      <mat-list-item>{{touristAttraction.lastVisited | date:'longDate'}}</mat-list-item>
-      <mat-list-item>{{touristAttraction.euroregion}}</mat-list-item>
+      <mat-list-item>
+        <h2>{{touristAttraction.category}}</h2>
+      </mat-list-item>
+      <mat-list-item>
+        <h4>{{touristAttraction.description}}</h4>
+      </mat-list-item>
+      <mat-card class="image-card">
+        <img class="image"
+             mat-card-avatar
+             src="{{touristAttraction.imageUrl}}"
+             alt="image">
+      </mat-card>
+      <mat-list-item>
+        <a href='{{touristAttraction.website}}'
+           target="_blank">
+          <button mat-button
+                  class='official-webside-link'>
+            <mat-icon class="icon">public</mat-icon>
+            Go to the official website
+          </button>
+        </a>
+      </mat-list-item>
+      <div class="more-information">
+        <mat-list-item>
+          <tg-tourist-attraction-address [address]="touristAttraction.address">
+          </tg-tourist-attraction-address>
+        </mat-list-item>
+        <mat-list-item>
+          Date of the last visit : {{touristAttraction.lastVisited | date:'longDate'}}
+        </mat-list-item>
+      </div>
     </mat-card-content>
-    <button mat-raised-button
+    <button mat-button
+            mat-raised-button
             (click)='backToTheList()'>
       Back to the list
     </button>

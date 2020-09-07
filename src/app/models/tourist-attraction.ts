@@ -6,9 +6,9 @@ export interface TouristAttraction {
   category: TouristAttractionCategory;
   name: string;
   description: string;
+  imageUrl: string;
   website: string;
   place: string;
   address: TouristAttractionAddress;
-  euroregion: string;
   lastVisited: Date;
 }
