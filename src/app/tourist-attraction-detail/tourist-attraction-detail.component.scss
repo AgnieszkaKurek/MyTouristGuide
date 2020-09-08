@@ -1,46 +1,33 @@
 @import "../../assets/variables.scss";
 
-.mat-card,
-.button {
+* {
   align-items: center;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
-.card-title {
+mat-card-title {
   font-weight: bold;
   color: $dark-color;
-}
-
-h1,
-h2,
-h4,
-.more-information {
-  text-align: center;
 }
 
 .official-webside-link {
   font-size: x-small;
 }
 
-.image-card,
 .image {
   height: $default-image-size;
-  width: 1200px;
-}
-
-.image-card {
-  width: 1200px;
-}
-
-.image {
   width: $default-image-size;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $default-padding;
 }
 
 .more-information {
   font-size: small;
 }
 
-.button {
+button {
   margin-top: $default-margin;
 }
