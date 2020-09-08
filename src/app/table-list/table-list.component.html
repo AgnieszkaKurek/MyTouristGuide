@@ -1,13 +1,13 @@
+<div class="table">
 <tg-filter>
 </tg-filter>
 <ng-container *ngIf='touristAttractions$ | async as touristAttractions'>
   <ng-container *ngIf='touristAttractions.lengthAfterFiltering'>
-    <div class='table-list'>
       <tg-table-list-grid *ngIf='touristAttractions.lengthAfterFiltering'
                           [touristAttractions]="touristAttractions.currentPageAttractions">
       </tg-table-list-grid>
       <tg-table-list-paginator [length]="touristAttractions.lengthAfterFiltering">
       </tg-table-list-paginator>
-    </div>
   </ng-container>
 </ng-container>
+</div>

@@ -19,14 +19,16 @@
              alt="image">
       </mat-card>
       <mat-list-item>
-        <a href='{{touristAttraction.website}}'
-           target="_blank">
-          <button mat-button
-                  class='official-webside-link'>
-            <mat-icon class="icon">public</mat-icon>
-            Go to the official website
-          </button>
-        </a>
+        <div class="button">
+          <a href='{{touristAttraction.website}}'
+             target="_blank">
+            <button mat-button
+                    class='official-webside-link'>
+              <mat-icon class="icon">public</mat-icon>
+              Go to the official website
+            </button>
+          </a>
+        </div>
       </mat-list-item>
       <div class="more-information">
         <mat-list-item>
@@ -37,11 +39,13 @@
           Date of the last visit : {{touristAttraction.lastVisited | date:'longDate'}}
         </mat-list-item>
       </div>
+      <div class="button">
+        <button mat-button
+                mat-raised-button
+                (click)='backToTheList()'>
+          Back to the list
+        </button>
+      </div>
     </mat-card-content>
-    <button mat-button
-            mat-raised-button
-            (click)='backToTheList()'>
-      Back to the list
-    </button>
   </mat-card>
 </ng-container>

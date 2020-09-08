@@ -6,7 +6,6 @@ import { FilterService } from './filter.service';
 @Component({
   selector: 'tg-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterComponent {

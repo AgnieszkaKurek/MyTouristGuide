@@ -1,9 +1,14 @@
 @import "../../assets/variables.scss";
 
+.mat-card,
+.button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .mat-card {
-  margin-left: $default-margin - $margin-alignment-size;
-  margin-right: $default-margin - $margin-alignment-size;
-  margin-top: $default-margin + $margin-alignment-size;
+  margin: $default-margin;
 }
 
 .card-title {
@@ -13,44 +18,33 @@
 
 h1,
 h2,
-h4 {
+h4,
+.more-information {
   text-align: center;
 }
 
 .official-webside-link {
   font-size: x-small;
-  margin-top: $default-margin;
 }
 
-.image-card {
-  margin-left: 2 * $default-margin;
-  margin-right: 2 * $default-margin;
+.image-card,
+.image {
   height: $default-image-size;
   width: 1200px;
 }
 
+.image-card {
+  width: 1200px;
+}
+
 .image {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  height: $default-image-size;
   width: $default-image-size;
 }
 
 .more-information {
-  text-align: center;
   font-size: small;
 }
 
-button {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+.button {
   margin-top: $default-margin;
 }

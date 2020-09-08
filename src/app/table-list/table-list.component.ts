@@ -8,6 +8,7 @@ import { TouristAttractionsListInfo } from '../models/tourist-attractions-list-i
 @Component({
   selector: 'tg-table-list',
   templateUrl: './table-list.component.html',
+  styleUrls: ['./table-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableListComponent implements OnInit {
