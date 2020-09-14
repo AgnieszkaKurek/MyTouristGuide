@@ -22,7 +22,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         name: 'Bolkow Castle Museum',
         description: 'Located in Bolków on the Castle Hill, whose slope ends with a sharp cliff from the side of the Nysa Szalona River, and a gentle eastern slope covers the town.',
         place: 'Bolkow',
-        imageUrl: 'assets/images/1_bolkow_castle.jpg',
+        imageUrl: '1_bolkow_castle',
         website: 'http://www.zamek-bolkow.info.pl/',
         address: {
           city: 'Bolkow',
@@ -37,7 +37,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         category: TouristAttractionCategory.MusicFestival,
         name: 'Castle Party',
         description: 'One of the largest gothic rock music festivals in Europe, held at the turn of July and August at Bolków Castle.',
-        imageUrl: 'assets/images/2_castle_party.jpg',
+        imageUrl: '2_castle_party',
         website: 'http://www.zamek-bolkow.info.pl/',
         place: 'Bolkow',
         address: {
@@ -53,7 +53,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         category: TouristAttractionCategory.OpenAirMuseum,
         name: 'Center of Slavs and Vikings',
         description: 'The open-air museum is situated on the quay of the Dziwna River. There are a dozen or so objects here - replicas of early medieval Wolin.',
-        imageUrl: 'assets/images/3_slavs_and_vikings_center.jpg',
+        imageUrl: '3_slavs_and_vikings_center',
         website: 'https://jomsborg-vineta.com/',
         place: 'Wolin',
         address: {
@@ -69,7 +69,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         category: TouristAttractionCategory.AmusementPark,
         name: 'American Theme Park TWINPIGS',
         description: 'The first amusement park in Poland that draws handfuls from American classics. The towns were divided into thematic zones referring to history and culture from overseas.',
-        imageUrl: 'assets/images/4_twinpigs.jpg',
+        imageUrl: '4_twinpigs',
         website: 'https://twinpigs.zory.pl/',
         place: 'Zory',
         address: {
@@ -85,7 +85,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         category: TouristAttractionCategory.HauntedHause,
         name: 'Lost Souls Alley',
         description: 'Lost Souls Alley is the first in Poland, established in 2013, interactive fear house with elements of an escape room.',
-        imageUrl: 'assets/images/5_lost_soul_alley.jpg',
+        imageUrl: '5_lost_soul_alley',
         website: 'https://lostsoulsalley.pl/',
         place: 'Cracow',
         address: {
@@ -101,7 +101,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         category: TouristAttractionCategory.SportFacility,
         name: 'National Stadium PGN Narodowy',
         description: 'The National Stadium in Warsaw, from July 2015 under the name PGE Narodowy - a multifunctional sports stadium located in Warsaw. It was built on the site of the 10th Anniversary Stadium before the 2012 European Football Championship.',
-        imageUrl: 'assets/images/6_national_stadium.jpg',
+        imageUrl: '6_national_stadium',
         website: '/https://www.pgenarodowy.pl/',
         place: 'Warsaw',
         address: {
@@ -117,7 +117,7 @@ export class TouristAttractionDb implements InMemoryDbService {
         category: TouristAttractionCategory.Zoo,
         name: 'Zoo Wroclaw Afrykarium',
         description: 'The fastest growing zoo in Poland! In 2014, a unique global oceanarium was established here, presenting animals from one continent - Africa.',
-        imageUrl: 'assets/images/7_wroclaw_zoo.jpg',
+        imageUrl: '7_wroclaw_zoo',
         website: 'http://zoo.wroclaw.pl/',
         place: 'Wroclaw',
         address: {
