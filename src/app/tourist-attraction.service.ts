@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TouristAttraction } from './models/tourist-attraction';
 import { TouristAttractionListSetting } from './tourist-attraction-list-setting.service';
-import { shareReplay, map, tap } from 'rxjs/operators';
+import { shareReplay, map } from 'rxjs/operators';
 import { TouristAttractionsListInfo } from './models/tourist-attractions-list-info';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class TouristAttractionService {
 
   public getTouristAttractions$(setting: TouristAttractionListSetting): Observable<TouristAttractionsListInfo> {
     return this.touristAttractions$.pipe(
-      map((data: TouristAttraction[]) => this.filterAndPaginate(data, setting)),
+      map((items: TouristAttraction[]) => this.filterAndPaginate(items, setting)),
     );
   }
 
@@ -34,10 +34,20 @@ export class TouristAttractionService {
   private get touristAttractions$(): Observable<TouristAttraction[]> {
     if (!this.cache) {
       this.cache = this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
+        map((items: TouristAttraction[]) => this.enrichImageUrl(items)),
         shareReplay(),
       );
     }
     return this.cache;
+  }
+
+  private enrichImageUrl(items: TouristAttraction[]): TouristAttraction[] {
+    return items.map(item =>
+      ({
+        ...item,
+        imageUrl: `assets/images/${item.imageUrl}.jpg`,
+      })
+    );
   }
 
   private filterAndPaginate(items: TouristAttraction[], setting: TouristAttractionListSetting): TouristAttractionsListInfo {

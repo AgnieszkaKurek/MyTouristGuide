@@ -1,7 +1,15 @@
 @import "../../assets/variables.scss";
 
+.container {
+  margin: $default-margin;
+}
+
 .active {
   font-weight: bold;
   color: $active;
-  color: mat-color($dark-accent, darker);
+}
+
+button {
+  margin-bottom: $default-margin;
+  background-color: $light-background;
 }

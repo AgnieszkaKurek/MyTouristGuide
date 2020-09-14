@@ -2,4 +2,14 @@
 @include mat-core();
 
 $dark-accent: mat-palette($mat-green, 300, 700, 900);
-$active: mat-color($dark-accent, darker);
+$active: mat-color($dark-accent, 300);
+$basic-color: mat-palette($mat-grey, 200, 300, 400);
+$basic-color-darker: mat-color($basic-color, darker);
+$dark-color: mat-color($mat-grey, 900);
+$light-background: mat-color($mat-grey, 100);
+
+$default-margin: 20px;
+$default-padding: 10px;
+$default-image-size: 300px;
+
+$spaceing-m: 97%;

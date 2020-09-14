@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'tg-tourist-attraction-detail',
   templateUrl: './tourist-attraction-detail.component.html',
+  styleUrls: ['./tourist-attraction-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TouristAttractionDetailComponent implements OnInit {

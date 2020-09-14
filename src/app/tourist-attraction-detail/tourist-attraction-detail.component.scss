@@ -1,0 +1,33 @@
+@import "../../assets/variables.scss";
+
+* {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+mat-card-title {
+  font-weight: bold;
+  color: $dark-color;
+}
+
+.official-webside-link {
+  font-size: x-small;
+}
+
+.image {
+  height: $default-image-size;
+  width: $default-image-size;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $default-padding;
+}
+
+.more-information {
+  font-size: small;
+}
+
+button {
+  margin-top: $default-margin;
+}

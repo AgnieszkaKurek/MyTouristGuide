@@ -1,9 +1,10 @@
 <form *ngIf='{filter: filter$ | async}'
-      [formGroup]="form">
+      [formGroup]="form"
+      class="filter">
   <mat-form-field>
     <input type="text"
            matInput
-           placeholder="Tourist atraction"
+           placeholder="Search tourist atraction"
            formControlName="filter">
   </mat-form-field>
 </form>
