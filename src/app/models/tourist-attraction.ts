@@ -10,5 +10,6 @@ export interface TouristAttraction {
   website: string;
   place: string;
   address: TouristAttractionAddress;
+  mapLocalization: string;
   lastVisited: Date;
 }

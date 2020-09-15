@@ -30,6 +30,7 @@ export class TouristAttractionDb implements InMemoryDbService {
           zipCode: '59-420',
           voivodeship: 'Lower Silesia',
         },
+        mapLocalization: 'https://tinyurl.com/y2kg5vyt',
         lastVisited: new Date('07/14/2019'),
       },
       {
@@ -46,6 +47,7 @@ export class TouristAttractionDb implements InMemoryDbService {
           zipCode: '59-420',
           voivodeship: 'Lower Silesia',
         },
+        mapLocalization: 'https://tinyurl.com/y2kg5vyt',
         lastVisited: new Date('07/14/2019'),
       },
       {
@@ -62,6 +64,7 @@ export class TouristAttractionDb implements InMemoryDbService {
           zipCode: '72-510',
           voivodeship: 'West Pomeranian',
         },
+        mapLocalization: 'https://tinyurl.com/y4hv3aof',
         lastVisited: new Date('08/17/2019'),
       },
       {
@@ -78,6 +81,7 @@ export class TouristAttractionDb implements InMemoryDbService {
           zipCode: '44-240',
           voivodeship: 'Silesian',
         },
+        mapLocalization: 'https://tinyurl.com/yy6pp8rc',
         lastVisited: new Date('09/30/2017'),
       },
       {
@@ -94,6 +98,7 @@ export class TouristAttractionDb implements InMemoryDbService {
           zipCode: '31-021',
           voivodeship: 'Lesser Poland',
         },
+        mapLocalization: 'https://tinyurl.com/y3cevtye',
         lastVisited: new Date('07/02/2017'),
       },
       {
@@ -110,6 +115,7 @@ export class TouristAttractionDb implements InMemoryDbService {
           zipCode: '03-901',
           voivodeship: 'Masovian ',
         },
+        mapLocalization: 'https://tinyurl.com/y4n75pmz',
         lastVisited: new Date('10/13/2019'),
       },
       {
@@ -126,6 +132,7 @@ export class TouristAttractionDb implements InMemoryDbService {
           zipCode: '51-618',
           voivodeship: 'Lower Silesia',
         },
+        mapLocalization: 'https://tinyurl.com/yxdrp4u5',
         lastVisited: new Date('07/06/2016'),
       },
     ];
