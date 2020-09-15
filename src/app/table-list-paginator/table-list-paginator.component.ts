@@ -1,4 +1,4 @@
-import { TouristAttractionListSettingService, TouristAttractionListSetting } from '../../tourist-attraction-list-setting.service';
+import { TouristAttractionListSettingService, TouristAttractionListSetting } from '../tourist-attraction-list-setting.service';
 import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PageEvent } from '@angular/material/paginator';

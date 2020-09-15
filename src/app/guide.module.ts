@@ -11,18 +11,18 @@ import { TouristAttractionDb } from './tourist-attraction-db.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { TableListGridComponent } from './table-list/table-list-grid/table-list-grid.component';
+import { TableListGridComponent } from './table-list-grid/table-list-grid.component';
 import { FilterComponent } from './filter/filter.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TableListPaginatorComponent } from './table-list/table-list-paginator/table-list-paginator.component';
+import { TableListPaginatorComponent } from './table-list-paginator/table-list-paginator.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TouristAttractionDetailComponent } from './tourist-attraction-detail/tourist-attraction-detail.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import { TouristAttractionAddressComponent } from './tourist-attraction-detail/tourist-attraction-address/tourist-attraction-address.component';
+import { TouristAttractionAddressComponent } from './tourist-attraction-address/tourist-attraction-address.component';
 
 @NgModule({
   declarations: [

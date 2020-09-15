@@ -1,5 +1,5 @@
 import { MatTableDataSource } from '@angular/material/table';
-import { TouristAttraction } from './../../models/tourist-attraction';
+import { TouristAttraction } from './../models/tourist-attraction';
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Input } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
