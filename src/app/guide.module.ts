@@ -16,7 +16,7 @@ import { FilterComponent } from './filter/filter.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TableListPaginatorComponent } from './table-list-paginator/table-list-paginator.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TouristAttractionDetailComponent } from './tourist-attraction-detail/tourist-attraction-detail.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,7 +32,7 @@ import { TouristAttractionAddressComponent } from './tourist-attraction-address/
     MapComponent,
     TableListGridComponent,
     FilterComponent,
-    TableListPaginatorComponent,
+    PaginatorComponent,
     TouristAttractionDetailComponent,
     TouristAttractionAddressComponent,
   ],
