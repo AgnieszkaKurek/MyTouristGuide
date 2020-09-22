@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { TouristAttractionAddress } from './../models/tourist-attraction-address';
+import { TouristAttractionAddress } from './../../shared/models/tourist-attraction-address';
 
 @Component({
   selector: 'tg-tourist-attraction-address',

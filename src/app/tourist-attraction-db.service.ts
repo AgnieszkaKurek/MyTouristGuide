@@ -1,7 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Injectable } from '@angular/core';
-import { TouristAttractionCategory } from './models/tourist-attraction-category.enum';
-import { TouristAttraction } from './models/tourist-attraction';
+import { TouristAttractionCategory } from './shared/models/tourist-attraction-category.enum';
+import { TouristAttraction } from './shared/models/tourist-attraction';
 
 @Injectable({
   providedIn: 'root',
