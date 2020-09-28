@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TouristAttraction } from './shared/models/tourist-attraction';
+import { TouristAttraction } from './models/tourist-attraction';
 import { TouristAttractionListSetting } from './tourist-attraction-list-setting.service';
 import { shareReplay, map } from 'rxjs/operators';
-import { TouristAttractionsListInfo } from './shared/models/tourist-attractions-list-info';
+import { TouristAttractionsListInfo } from './models/tourist-attractions-list-info';
 
 @Injectable({
   providedIn: 'root',

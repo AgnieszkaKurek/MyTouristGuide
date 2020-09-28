@@ -1,9 +1,9 @@
-import { TouristAttractionDetailComponent } from './tourist-attraction-detail/tourist-attraction-detail/tourist-attraction-detail.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableListComponent } from './table-list/table-list/table-list.component';
-import { TileListComponent } from './tile-list/tile-list/tile-list.component';
-import { MapComponent } from './map/map/map.component';
+import { TableListComponent } from '../table/table-list/table-list.component';
+import { TileListComponent } from '../tile/tile-list/tile-list.component';
+import { MapComponent } from '../map/map/map.component';
+import { TouristAttractionDetailComponent } from '../detail/tourist-attraction-detail/tourist-attraction-detail.component';
 
 const routes: Routes = [
   {

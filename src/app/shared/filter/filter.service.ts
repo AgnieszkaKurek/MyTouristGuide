@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { distinctUntilChanged, debounceTime, tap } from 'rxjs/operators';
-import { TouristAttractionListSettingService } from '../../tourist-attraction-list-setting.service';
+import { TouristAttractionListSettingService } from '../tourist-attraction-list-setting.service';
 
 @Injectable({
   providedIn: 'root',
