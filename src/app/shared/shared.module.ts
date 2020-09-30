@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FilterComponent } from '../shared/filter/filter.component';
 import { PaginatorComponent } from '../shared/paginator/paginator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -8,9 +7,6 @@ import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FilterComponent,
-    PaginatorComponent,
     MatPaginatorModule,
     MatInputModule,
     FormsModule,
@@ -20,5 +16,9 @@ import { MatInputModule } from '@angular/material/input';
     PaginatorComponent,
     FilterComponent,
   ],
+  exports: [
+    PaginatorComponent,
+    FilterComponent,
+  ]
 })
 export class SharedModule { }

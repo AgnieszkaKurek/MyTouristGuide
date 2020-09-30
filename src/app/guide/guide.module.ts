@@ -18,14 +18,13 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     MatButtonModule,
     BrowserModule,
-    GuideRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(TouristAttractionDb),
+    SharedModule,
+    GuideRoutingModule,
     MapModule,
     TileModule,
     DetailModule,
-    TableModule,
-    SharedModule,
-
+    TableModule
   ],
   providers: [],
   bootstrap: [GuideComponent],

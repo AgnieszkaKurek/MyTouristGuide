@@ -5,15 +5,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TouristAttractionDetailComponent } from './tourist-attraction-detail/tourist-attraction-detail.component';
 import { TouristAttractionAddressComponent } from './tourist-attraction-address/tourist-attraction-address.component';
+import { DetailRoutingModule } from './detail-routing.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
+    CommonModule,
     MatListModule,
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    TouristAttractionDetailComponent,
-    TouristAttractionAddressComponent,
+    DetailRoutingModule,
   ],
   declarations: [
     TouristAttractionDetailComponent,

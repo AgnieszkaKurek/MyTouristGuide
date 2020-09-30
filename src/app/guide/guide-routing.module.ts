@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableListComponent } from '../table/table-list/table-list.component';
-import { TileListComponent } from '../tile/tile-list/tile-list.component';
-import { MapComponent } from '../map/map/map.component';
-import { TouristAttractionDetailComponent } from '../detail/tourist-attraction-detail/tourist-attraction-detail.component';
 
 const routes: Routes = [
   {
@@ -13,19 +9,19 @@ const routes: Routes = [
   },
   {
     path: 'attractions/list',
-    component: TableListComponent,
+    loadChildren: () => import('../table/table.module').then(m => m.TableModule),
   },
   {
     path: 'attractions/tile',
-    component: TileListComponent,
+    loadChildren: () => import('../tile/tile.module').then(m => m.TileModule),
   },
   {
     path: 'attractions/map',
-    component: MapComponent,
+    loadChildren: () => import('../map/map.module').then(m => m.MapModule),
   },
   {
     path: 'attraction/:id',
-    component: TouristAttractionDetailComponent,
+    loadChildren: () => import('../detail/detail.module').then(m => m.DetailModule),
   },
 ];
 
