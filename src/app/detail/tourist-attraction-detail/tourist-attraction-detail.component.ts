@@ -26,6 +26,6 @@ export class TouristAttractionDetailComponent implements OnInit {
   }
 
   public backToTheList(): void {
-    this.router.navigate(['attractions/list']);
+    this.router.navigate(['list']);
   }
 }

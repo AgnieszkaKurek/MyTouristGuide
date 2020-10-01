@@ -4,23 +4,23 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'attractions/list',
+    redirectTo: 'list',
     pathMatch: 'full',
   },
   {
-    path: 'attractions/list',
+    path: 'list',
     loadChildren: () => import('../table/table.module').then(m => m.TableModule),
   },
   {
-    path: 'attractions/tile',
+    path: 'tile',
     loadChildren: () => import('../tile/tile.module').then(m => m.TileModule),
   },
   {
-    path: 'attractions/map',
+    path: 'map',
     loadChildren: () => import('../map/map.module').then(m => m.MapModule),
   },
   {
-    path: 'attraction/:id',
+    path: ':id',
     loadChildren: () => import('../detail/detail.module').then(m => m.DetailModule),
   },
 ];
