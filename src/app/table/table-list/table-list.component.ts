@@ -1,9 +1,9 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { TouristAttractionService } from '../tourist-attraction.service';
-import { TouristAttractionListSettingService } from '../tourist-attraction-list-setting.service';
+import { TouristAttractionService } from '../../shared/tourist-attraction.service';
+import { TouristAttractionListSettingService } from '../../shared/tourist-attraction-list-setting.service';
 import { switchMap } from 'rxjs/operators';
-import { TouristAttractionsListInfo } from '../models/tourist-attractions-list-info';
+import { TouristAttractionsListInfo } from '../../shared/models/tourist-attractions-list-info';
 
 @Component({
   selector: 'tg-table-list',

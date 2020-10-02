@@ -1,7 +1,7 @@
-import { TouristAttraction } from './../models/tourist-attraction';
+import { TouristAttraction } from './../../shared/models/tourist-attraction';
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TouristAttractionService } from '../tourist-attraction.service';
+import { TouristAttractionService } from '../../shared/tourist-attraction.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -26,6 +26,6 @@ export class TouristAttractionDetailComponent implements OnInit {
   }
 
   public backToTheList(): void {
-    this.router.navigate(['attractions/list']);
+    this.router.navigate(['list']);
   }
 }

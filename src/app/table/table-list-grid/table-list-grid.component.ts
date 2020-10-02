@@ -1,5 +1,5 @@
 import { MatTableDataSource } from '@angular/material/table';
-import { TouristAttraction } from './../../models/tourist-attraction';
+import { TouristAttraction } from '../../shared/models/tourist-attraction';
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Input } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
@@ -37,6 +37,6 @@ export class TableListGridComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
   public showDetails(id: number): any {
-    this.router.navigate(['attraction', id]);
+    this.router.navigate([id]);
   }
 }
