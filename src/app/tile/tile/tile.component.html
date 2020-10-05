@@ -1,0 +1,4 @@
+<ng-container *ngIf='touristAttractions$ | async as touristAttractions'>
+  <tg-tile-grid *ngIf='touristAttractions.lengthAfterFiltering'>
+  </tg-tile-grid>
+</ng-container>
