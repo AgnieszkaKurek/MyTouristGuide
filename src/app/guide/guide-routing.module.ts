@@ -1,13 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'list',
-    pathMatch: 'full',
-  },
   {
     path: 'list',
     loadChildren: () => import('../table/table.module').then(m => m.TableModule),
@@ -24,13 +18,16 @@ const routes: Routes = [
     path: ':id',
     loadChildren: () => import('../detail/detail.module').then(m => m.DetailModule),
   },
+  {
+    path: '',
+    redirectTo: 'list',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class GuideRoutingModule { }
