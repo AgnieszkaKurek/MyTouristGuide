@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'tg-tile-grid',
@@ -6,6 +6,6 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild } from '@a
   styleUrls: ['./tile-grid.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TileGrideComponent {//todo - wrong name
+export class TileGridComponent {
 
 }

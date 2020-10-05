@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { TileComponent} from './tile/tile.component';
-import { TileGrideComponent } from './tile-grid/tile-grid.component';
+import { TileGridComponent } from './tile-grid/tile-grid.component';
 import { TileRoutingModule } from './tile-routing.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,7 +19,7 @@ import { MatSortModule } from '@angular/material/sort';
   ],
   declarations: [
     TileComponent,
-    TileGrideComponent,
+    TileGridComponent,
   ],
 })
 export class TileModule { }
