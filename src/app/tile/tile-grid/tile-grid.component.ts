@@ -1,4 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { TouristAttraction } from '../../shared/models/tourist-attraction';
 
 @Component({
   selector: 'tg-tile-grid',
@@ -8,4 +10,14 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class TileGridComponent {
 
+  @Input()
+  public attractions: TouristAttraction;
+
+  public constructor(
+    private router: Router,
+  ) { }
+
+  public showDetails(id: number): any {
+    this.router.navigate([id]);
+  }
 }

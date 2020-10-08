@@ -1,11 +1,14 @@
 <mat-grid-list cols="2"
                rowHeight="2:1">
-  <mat-grid-tile><button mat-button
-            mat-raised-button>Show</button></mat-grid-tile>
-  <mat-grid-tile><button mat-button
-            mat-raised-button>Show</button></mat-grid-tile>
-  <mat-grid-tile><button mat-button
-            mat-raised-button>Show</button></mat-grid-tile>
-  <mat-grid-tile><button mat-button
-            mat-raised-button>Show</button></mat-grid-tile>
+  <mat-grid-tile *ngFor="let attraction of attractions">
+    {{attraction.name}}
+    {{attraction.category}}
+    {{attraction.place}}
+    {{attraction.lastVisited | date:'longDate'}}
+    <button (click)='showDetails(attraction.id)'
+            mat-button
+            mat-raised-button>
+      Show details
+    </button>
+  </mat-grid-tile>
 </mat-grid-list>

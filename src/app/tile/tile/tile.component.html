@@ -1,4 +1,9 @@
+<tg-filter>
+</tg-filter>
 <ng-container *ngIf='touristAttractions$ | async as touristAttractions'>
-  <tg-tile-grid *ngIf='touristAttractions.lengthAfterFiltering'>
+  <tg-tile-grid *ngIf='touristAttractions.lengthAfterFiltering'
+                [attractions]="touristAttractions.currentPageAttractions">
   </tg-tile-grid>
+  <tg-paginator [length]="touristAttractions.lengthAfterFiltering">
+  </tg-paginator>
 </ng-container>
