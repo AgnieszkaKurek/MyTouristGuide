@@ -2,4 +2,18 @@
 
 mat-grid-tile {
   background: $light-background;
+  font-weight: bold;
+}
+
+mat-grid-tile-header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+button {
+  background-color: Transparent;
+  border:5px solid;
+  font-weight: bold;
 }
