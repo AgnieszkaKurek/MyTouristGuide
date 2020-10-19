@@ -1,13 +1,9 @@
 <mat-grid-list cols="2"
                rowHeight="2:1">
   <mat-grid-tile *ngFor="let attraction of attractions"
-                 [ngStyle]="{'background-image': 'url('+ attraction?.imageUrl +')'}">
+                 [ngStyle]="{'background-image': 'url('+ attraction.imageUrl +')'}"
+                 (click)='showDetails(attraction.id)'>
     <mat-grid-tile-header>{{attraction.name}}</mat-grid-tile-header>
-    <button mat-button
-            mat-raised-button
-            class="mat-body-strong"
-            (click)='showDetails(attraction.id)'>
-      Show attraction
-    </button>
+
   </mat-grid-tile>
 </mat-grid-list>
