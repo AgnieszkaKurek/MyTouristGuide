@@ -3,6 +3,7 @@
 mat-grid-tile {
   background: $light-background;
   font-weight: bold;
+  cursor: grab;
 }
 
 mat-grid-tile-header {
@@ -12,8 +13,3 @@ mat-grid-tile-header {
   text-align: center;
 }
 
-button {
-  background-color: Transparent;
-  border:5px solid;
-  font-weight: bold;
-}
