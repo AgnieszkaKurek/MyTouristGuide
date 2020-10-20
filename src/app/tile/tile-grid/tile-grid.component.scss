@@ -7,9 +7,9 @@ mat-grid-tile {
   }
 }
 
-mat-grid-tile-header {
-  color: $dark-color !important;
-  background-color: transparent !important;
+:host::ng-deep .mat-grid-tile .mat-grid-tile-header {
+  color: $dark-color;
+  background-color: transparent;
   cursor: pointer;
   display: flex;
   justify-content: center;
