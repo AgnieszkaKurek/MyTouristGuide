@@ -1,15 +1,23 @@
 @import "../../../assets/variables.scss";
 
 mat-grid-tile {
-  background: $light-background;
   font-weight: bold;
-  cursor: grab;
+  &:hover {
+    background-color: $light-background;
+  }
 }
 
 mat-grid-tile-header {
-  align-items: center;
+  color: $dark-color !important;
+  background-color: transparent !important;
+  cursor: pointer;
   display: flex;
   justify-content: center;
-  text-align: center;
+  margin-top: $default-padding;
 }
 
+img {
+  width: 95%;
+  height: 95%;
+  cursor: pointer;
+}
