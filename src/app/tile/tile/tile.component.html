@@ -4,6 +4,7 @@
   <tg-tile-grid *ngIf='touristAttractions.lengthAfterFiltering'
                 [attractions]="touristAttractions.currentPageAttractions">
   </tg-tile-grid>
-  <tg-paginator [length]="touristAttractions.lengthAfterFiltering">
+  <tg-paginator *ngIf='touristAttractions.lengthAfterFiltering'
+                [length]="touristAttractions.lengthAfterFiltering">
   </tg-paginator>
 </ng-container>
