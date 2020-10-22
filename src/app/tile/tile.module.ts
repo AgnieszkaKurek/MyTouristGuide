@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from './../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatButtonModule,
     SharedModule,
     MatSortModule,
+    MatCardModule
   ],
   declarations: [
     TileComponent,

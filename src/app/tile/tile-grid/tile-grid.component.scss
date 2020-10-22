@@ -1,5 +1,23 @@
 @import "../../../assets/variables.scss";
 
 mat-grid-tile {
-  background: $light-background;
+  font-weight: bold;
+  &:hover {
+    background-color: $light-background;
+  }
+}
+
+:host::ng-deep .mat-grid-tile .mat-grid-tile-header {
+  color: $dark-color;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-top: $default-padding;
+}
+
+img {
+  width: 95%;
+  height: 95%;
+  cursor: pointer;
 }
