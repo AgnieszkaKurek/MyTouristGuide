@@ -1,3 +1,4 @@
+import { ListHistorySettingService } from './../../shared/list-history-setting.service';
 import { TouristAttraction } from './../../shared/models/tourist-attraction';
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,6 +16,7 @@ export class TouristAttractionDetailComponent implements OnInit {
   public touristAttraction$: Observable<TouristAttraction>;
 
   public constructor(
+    private listHistory: ListHistorySettingService,
     private touristAttractionService: TouristAttractionService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -26,6 +28,6 @@ export class TouristAttractionDetailComponent implements OnInit {
   }
 
   public backToTheList(): void {
-    this.router.navigate(['list']);
+    this.router.navigate([this.listHistory.backToListUrl]);
   }
 }
