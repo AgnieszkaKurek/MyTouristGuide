@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { TouristAttraction } from '../../shared/models/tourist-attraction';
+import { ListHistorySettingService } from '../../shared/list-history-setting.service';
 
 @Component({
   selector: 'tg-tile-grid',
@@ -15,9 +16,12 @@ export class TileGridComponent {
 
   public constructor(
     private router: Router,
-  ) { }
+    private listHistorySettingService: ListHistorySettingService,
+  ) {
+  }
 
   public showDetails(id: number): any {
+    this.listHistorySettingService.backToListUrl = 'tile';
     this.router.navigate([id]);
   }
 }

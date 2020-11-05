@@ -3,6 +3,7 @@ import { TouristAttraction } from '../../shared/models/tourist-attraction';
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Input } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
+import { ListHistorySettingService } from '../../shared/list-history-setting.service';
 
 @Component({
   selector: 'tg-table-list-grid',
@@ -31,12 +32,16 @@ export class TableListGridComponent implements OnInit {
   ];
   public constructor(
     private router: Router,
-  ) { }
+    private listHistorySettingService: ListHistorySettingService,
+  ) {
+  }
 
   public ngOnInit(): void {
     this.dataSource.sort = this.sort;
   }
+
   public showDetails(id: number): any {
+    this.listHistorySettingService.backToListUrl = 'list';
     this.router.navigate([id]);
   }
 }
