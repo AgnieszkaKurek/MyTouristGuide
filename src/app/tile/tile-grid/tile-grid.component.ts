@@ -21,6 +21,7 @@ export class TileGridComponent {
   }
 
   public showDetails(id: number): any {
+    this.listHistorySettingService.backToListUrl = 'tile';
     this.router.navigate([id]);
   }
 }

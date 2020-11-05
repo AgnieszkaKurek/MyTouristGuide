@@ -16,7 +16,7 @@ export class TouristAttractionDetailComponent implements OnInit {
   public touristAttraction$: Observable<TouristAttraction>;
 
   public constructor(
-    private listHistory: ListHistorySettingService,
+    private listHistorySettingService: ListHistorySettingService,
     private touristAttractionService: TouristAttractionService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -28,6 +28,6 @@ export class TouristAttractionDetailComponent implements OnInit {
   }
 
   public backToTheList(): void {
-    this.router.navigate([this.listHistory.backToListUrl]);
+    this.router.navigate([this.listHistorySettingService.backToListUrl]);
   }
 }
