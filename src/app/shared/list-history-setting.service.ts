@@ -4,5 +4,5 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ListHistorySettingService {
-  public backToListUrl: string;
+  public backToListUrl: string = 'list';
 }
