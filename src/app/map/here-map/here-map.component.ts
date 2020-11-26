@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
 
 declare var H: any;
 
@@ -8,9 +8,9 @@ declare var H: any;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class HereMapComponent implements OnInit, AfterViewInit{
+export class HereMapComponent implements AfterViewInit {
 
-  @ViewChild('map')
+  @ViewChild('map', { static: true })
   public mapElement: ElementRef;
 
   @Input()
@@ -29,8 +29,6 @@ export class HereMapComponent implements OnInit, AfterViewInit{
   public height: any;
 
   public constructor() { }
-
-  public ngOnInit(): void { }
 
   public ngAfterViewInit(): void {
     const platform = new H.service.Platform({

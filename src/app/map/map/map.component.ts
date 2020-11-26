@@ -1,17 +1,18 @@
-import { Component, ChangeDetectionStrategy, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 declare var H: any;
 
 @Component({
   selector: 'tg-map',
   templateUrl: './map.component.html',
+  styleUrls: ['./map.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MapComponent implements OnInit, AfterViewInit {
+export class MapComponent implements AfterViewInit {
   private title: any = 'MyTouristGuide';
   private platform: any;
 
-  @ViewChild('map')
+  @ViewChild('map', { static: true })
   public mapElement: ElementRef;
 
   public constructor() {
@@ -20,8 +21,6 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
   }
 
-  public ngOnInit(): void { }
-
   public ngAfterViewInit(): void {
     const defaultLayers = this.platform.createDefaultLayers();
     const map = new H.Map(
@@ -29,7 +28,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       defaultLayers.vector.normal.map,
       {
         zoom: 10,
-        center: { lat: 37.7397, lng: -121.4252 }
+        center: { lat: 52.231924, lng: 21.006727 }
       }
     );
   }
