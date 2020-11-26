@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('../tile/tile.module').then(m => m.TileModule),
   },
   {
-    path: 'map',
-    loadChildren: () => import('../map/map.module').then(m => m.MapModule),
-  },
-  {
     path: ':id',
     loadChildren: () => import('../detail/detail.module').then(m => m.DetailModule),
   },
