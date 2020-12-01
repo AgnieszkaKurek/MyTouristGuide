@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('../tile/tile.module').then(m => m.TileModule),
   },
   {
+    path: 'adaNewAttraction',
+    loadChildren: () => import('../attraction-edit/attraction-edit.module').then(m => m.AttractionEditModule),
+  },
+  {
     path: ':id',
     loadChildren: () => import('../detail/detail.module').then(m => m.DetailModule),
   },
