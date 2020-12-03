@@ -15,7 +15,7 @@ export class AttractionEditComponent {
   ) {
   }
 
-  public add(): any {
+  public onSubmit(): any {
     console.log(this.form.getRawValue());
   }
 

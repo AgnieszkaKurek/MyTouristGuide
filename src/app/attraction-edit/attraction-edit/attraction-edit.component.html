@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-form-field>
     <input type="text"
            matInput
@@ -6,7 +6,7 @@
            formControlName="name"
            required />
   </mat-form-field>
-  <button (click)='add()'
+  <button type="submit"
           mat-button
           mat-raised-button>
     Add new attraction
