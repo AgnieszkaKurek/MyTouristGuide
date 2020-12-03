@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('../tile/tile.module').then(m => m.TileModule),
   },
   {
-    path: 'adaNewAttraction',
+    path: 'add',
     loadChildren: () => import('../attraction-edit/attraction-edit.module').then(m => m.AttractionEditModule),
   },
   {

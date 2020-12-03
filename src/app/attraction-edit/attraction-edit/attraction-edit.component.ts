@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { AttractionEditService } from './attraction-edit.service';
 
 @Component({
   selector: 'tg-attraction-edit',
@@ -7,9 +8,15 @@ import { FormGroup, FormControl } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AttractionEditComponent {
+  public form: FormGroup = this.attractionEditService.form;
 
-  public newTouristAttraction: any = new FormGroup({
-    name: new FormControl(''),
-  });
+  public constructor(
+    private attractionEditService: AttractionEditService,
+  ) {
+  }
+
+  public add(): any {
+    console.log(this.form.getRawValue());
+  }
 
 }

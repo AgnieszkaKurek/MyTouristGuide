@@ -1,7 +1,14 @@
-<form [formGroup]="newTouristAttraction">
-  <mat-form-field>Name: <input type="text"
+<form [formGroup]="form">
+  <mat-form-field>
+    <input type="text"
            matInput
-           name="name"
-           formControlName="name" />
+           placeholder="Name"
+           formControlName="name"
+           required />
   </mat-form-field>
+  <button (click)='add()'
+          mat-button
+          mat-raised-button>
+    Add new attraction
+  </button>
 </form>
