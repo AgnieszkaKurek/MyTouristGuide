@@ -5,13 +5,14 @@ import { AttractionEditService } from './attraction-edit.service';
 @Component({
   selector: 'tg-attraction-edit',
   templateUrl: './attraction-edit.component.html',
+  styleUrls: ['./attraction-edit.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AttractionEditComponent {
-  public form: FormGroup = this.attractionEditService.form;
+  public form: FormGroup = this._attractionEditService.form;
 
   public constructor(
-    private attractionEditService: AttractionEditService,
+    private _attractionEditService: AttractionEditService,
   ) {
   }
 
