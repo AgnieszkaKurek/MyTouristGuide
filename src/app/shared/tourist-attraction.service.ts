@@ -43,10 +43,10 @@ export class TouristAttractionService {
 
   private enrichImageUrl(items: TouristAttraction[]): TouristAttraction[] {
     return items.map(item =>
-      ({
-        ...item,
-        imageUrl: `assets/images/${item.imageUrl}.jpg`,
-      })
+    ({
+      ...item,
+      imageUrl: `assets/images/${item.imageUrl}.jpg`,
+    })
     );
   }
 
@@ -70,5 +70,9 @@ export class TouristAttractionService {
     const fromIndex = pageSize * pageNumber;
     const toIndex = pageSize * (pageNumber + 1);
     return data.slice(fromIndex, toIndex);
+  }
+
+  public add(attraction: TouristAttraction): Observable<TouristAttraction> {
+    return this.http.post<TouristAttraction>(this.touristAttractionsUrl, attraction);
   }
 }
