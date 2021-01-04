@@ -1,3 +1,4 @@
+import { TouristAttraction } from './../../shared/models/tourist-attraction';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AttractionEditService } from './attraction-edit.service';
@@ -16,8 +17,8 @@ export class AttractionEditComponent {
   ) {
   }
 
-  public onSubmit(): any {
-    console.log(this.form.getRawValue());
+  public onSubmit(): void {
+    const attraction = this.form.getRawValue() as TouristAttraction;
+    this._attractionEditService.add(attraction).subscribe();
   }
-
 }
