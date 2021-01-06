@@ -73,6 +73,7 @@ export class TouristAttractionService {
   }
 
   public add(attraction: TouristAttraction): Observable<TouristAttraction> {
+    this.cache = undefined;
     return this.http.post<TouristAttraction>(this.touristAttractionsUrl, attraction);
   }
 }
