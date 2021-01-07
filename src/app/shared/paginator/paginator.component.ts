@@ -15,15 +15,15 @@ export class PaginatorComponent implements OnInit {
   public length: number;
 
   public constructor(
-    private settingsService: TouristAttractionListSettingService,
+    private _settingsService: TouristAttractionListSettingService,
   ) {
   }
 
   public ngOnInit(): void {
-    this.settings$ = this.settingsService.settingsChanged;
+    this.settings$ = this._settingsService.settingsChanged;
   }
 
   public onPageChange(event: PageEvent): void {
-    this.settingsService.setPageSettings(event.pageSize, event.pageIndex);
+    this._settingsService.setPageSettings(event.pageSize, event.pageIndex);
   }
 }

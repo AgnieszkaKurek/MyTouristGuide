@@ -10,11 +10,11 @@ export class TouristAttractionDb implements InMemoryDbService {
 
   public createDb(): any {
     return {
-      touristAttractions: this.getTouristAttractions(),
+      touristAttractions: this._getTouristAttractions(),
     };
   }
 
-  private getTouristAttractions(): TouristAttraction[] {
+  private _getTouristAttractions(): TouristAttraction[] {
     return [
       {
         id: 1,

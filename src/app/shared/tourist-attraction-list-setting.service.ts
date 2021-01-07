@@ -12,32 +12,32 @@ export interface TouristAttractionListSetting {
 })
 export class TouristAttractionListSettingService {
 
-  private setting: TouristAttractionListSetting = {
+  private _setting: TouristAttractionListSetting = {
     filter: '',
     pageSize: 5,
     pageNumber: 0,
   };
-  private settingsChangedSource: BehaviorSubject<TouristAttractionListSetting> =
-    new BehaviorSubject<TouristAttractionListSetting>(this.setting);
+  private _settingsChangedSource: BehaviorSubject<TouristAttractionListSetting> =
+    new BehaviorSubject<TouristAttractionListSetting>(this._setting);
 
-  public settingsChanged: Observable<TouristAttractionListSetting> = this.settingsChangedSource.asObservable();
+  public settingsChanged: Observable<TouristAttractionListSetting> = this._settingsChangedSource.asObservable();
 
   public set filter(filter: string) {
-    this.setting = {
-      ...this.setting,
+    this._setting = {
+      ...this._setting,
       pageNumber: 0,
       filter: filter.toLocaleLowerCase(),
     };
-    this.settingsChangedSource.next(this.setting);
+    this._settingsChangedSource.next(this._setting);
   }
 
   public setPageSettings(pageSize: number, pageNumber: number): void {
-    this.setting = {
-      ...this.setting,
+    this._setting = {
+      ...this._setting,
       pageSize,
       pageNumber,
     };
-    this.settingsChangedSource.next(this.setting);
+    this._settingsChangedSource.next(this._setting);
   }
 
 }

@@ -14,7 +14,7 @@ import { ListHistorySettingService } from '../../shared/list-history-setting.ser
 export class TableListGridComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true })
-  private sort: MatSort;
+  private _sort: MatSort;
 
   @Input()
   public set touristAttractions(data: TouristAttraction[]) {
@@ -31,17 +31,17 @@ export class TableListGridComponent implements OnInit {
     'details',
   ];
   public constructor(
-    private router: Router,
-    private listHistorySettingService: ListHistorySettingService,
+    private _router: Router,
+    private _listHistorySettingService: ListHistorySettingService,
   ) {
   }
 
   public ngOnInit(): void {
-    this.dataSource.sort = this.sort;
+    this.dataSource.sort = this._sort;
   }
 
   public showDetails(id: number): any {
-    this.listHistorySettingService.backToListUrl = 'list';
-    this.router.navigate([id]);
+    this._listHistorySettingService.backToListUrl = 'list';
+    this._router.navigate([id]);
   }
 }

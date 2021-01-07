@@ -15,13 +15,13 @@ export class TileGridComponent {
   public attractions: TouristAttraction;
 
   public constructor(
-    private router: Router,
-    private listHistorySettingService: ListHistorySettingService,
+    private _router: Router,
+    private _listHistorySettingService: ListHistorySettingService,
   ) {
   }
 
   public showDetails(id: number): any {
-    this.listHistorySettingService.backToListUrl = 'tile';
-    this.router.navigate([id]);
+    this._listHistorySettingService.backToListUrl = 'tile';
+    this._router.navigate([id]);
   }
 }

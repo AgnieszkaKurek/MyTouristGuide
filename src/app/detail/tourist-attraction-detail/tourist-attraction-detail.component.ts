@@ -16,18 +16,18 @@ export class TouristAttractionDetailComponent implements OnInit {
   public touristAttraction$: Observable<TouristAttraction>;
 
   public constructor(
-    private listHistorySettingService: ListHistorySettingService,
-    private touristAttractionService: TouristAttractionService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
+    private _listHistorySettingService: ListHistorySettingService,
+    private _touristAttractionService: TouristAttractionService,
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router,
   ) { }
 
   public ngOnInit(): void {
-    const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.touristAttraction$ = this.touristAttractionService.getTouristAttractionById$(id);
+    const id = +this._activatedRoute.snapshot.paramMap.get('id');
+    this.touristAttraction$ = this._touristAttractionService.getTouristAttractionById$(id);
   }
 
   public backToTheList(): void {
-    this.router.navigate([this.listHistorySettingService.backToListUrl]);
+    this._router.navigate([this._listHistorySettingService.backToListUrl]);
   }
 }

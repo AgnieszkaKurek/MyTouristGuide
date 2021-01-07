@@ -9,11 +9,11 @@ import { FilterService } from './filter.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterComponent {
-  public form: FormGroup = this.filterService.forms;
-  public filter$: Observable<string> = this.filterService.filter;
+  public form: FormGroup = this._filterService.forms;
+  public filter$: Observable<string> = this._filterService.filter;
 
   public constructor(
-    private filterService: FilterService,
+    private _filterService: FilterService,
   ) {
   }
 }

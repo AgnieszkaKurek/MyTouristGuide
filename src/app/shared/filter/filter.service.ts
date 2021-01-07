@@ -8,26 +8,26 @@ import { TouristAttractionListSettingService } from '../tourist-attraction-list-
   providedIn: 'root',
 })
 export class FilterService {
-  private form: FormGroup;
+  private _form: FormGroup;
   public constructor(
-    private settingsService: TouristAttractionListSettingService,
+    private _settingsService: TouristAttractionListSettingService,
   ) {
   }
 
   public get forms(): FormGroup {
-    if (!this.form) {
-      this.form = new FormGroup({
+    if (!this._form) {
+      this._form = new FormGroup({
         filter: new FormControl(),
       });
     }
-    return this.form;
+    return this._form;
   }
 
   public get filter(): Observable<string> {
-    return this.form.get('filter').valueChanges.pipe(
+    return this._form.get('filter').valueChanges.pipe(
       distinctUntilChanged(),
       debounceTime(300),
-      tap(filter => this.settingsService.filter = filter),
+      tap(filter => this._settingsService.filter = filter),
     );
   }
 

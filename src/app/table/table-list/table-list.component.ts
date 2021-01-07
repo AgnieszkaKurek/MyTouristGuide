@@ -15,14 +15,14 @@ export class TableListComponent implements OnInit {
   public touristAttractions$: Observable<TouristAttractionsListInfo>;
 
   public constructor(
-    private touristAttractionService: TouristAttractionService,
-    private settingsService: TouristAttractionListSettingService,
+    private _touristAttractionService: TouristAttractionService,
+    private _settingsService: TouristAttractionListSettingService,
   ) {
   }
 
   public ngOnInit(): void {
-    this.touristAttractions$ = this.settingsService.settingsChanged.pipe(
-      switchMap(setting => this.touristAttractionService.getTouristAttractions$(setting)),
+    this.touristAttractions$ = this._settingsService.settingsChanged.pipe(
+      switchMap(setting => this._touristAttractionService.getTouristAttractions$(setting)),
     );
   }
 }

@@ -26,6 +26,6 @@ export class AttractionEditService {
   }
 
   public add(attraction: TouristAttraction): Observable<TouristAttraction>{
-    return this._attractionService.add(attraction);
+    return this._attractionService._add(attraction);
   }
 }

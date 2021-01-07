@@ -11,37 +11,37 @@ import { TouristAttractionsListInfo } from './models/tourist-attractions-list-in
 })
 export class TouristAttractionService {
 
-  private touristAttractionsUrl: string = 'api/touristAttractions';
-  private cache: Observable<TouristAttraction[]>;
+  private _touristAttractionsUrl: string = 'api/touristAttractions';
+  private _cache: Observable<TouristAttraction[]>;
 
   public constructor(
-    private http: HttpClient,
+    private _http: HttpClient,
   ) {
   }
 
   public getTouristAttractions$(setting: TouristAttractionListSetting): Observable<TouristAttractionsListInfo> {
-    return this.touristAttractions$.pipe(
-      map((items: TouristAttraction[]) => this.filterAndPaginate(items, setting)),
+    return this._touristAttractions$.pipe(
+      map((items: TouristAttraction[]) => this._filterAndPaginate(items, setting)),
     );
   }
 
   public getTouristAttractionById$(id: number): Observable<TouristAttraction> {
-    return this.touristAttractions$.pipe(
+    return this._touristAttractions$.pipe(
       map(list => list.find(x => x.id === id)),
     );
   }
 
-  private get touristAttractions$(): Observable<TouristAttraction[]> {
-    if (!this.cache) {
-      this.cache = this.http.get<TouristAttraction[]>(this.touristAttractionsUrl).pipe(
-        map((items: TouristAttraction[]) => this.enrichImageUrl(items)),
+  private get _touristAttractions$(): Observable<TouristAttraction[]> {
+    if (!this._cache) {
+      this._cache = this._http.get<TouristAttraction[]>(this._touristAttractionsUrl).pipe(
+        map((items: TouristAttraction[]) => this._enrichImageUrl(items)),
         shareReplay(),
       );
     }
-    return this.cache;
+    return this._cache;
   }
 
-  private enrichImageUrl(items: TouristAttraction[]): TouristAttraction[] {
+  private _enrichImageUrl(items: TouristAttraction[]): TouristAttraction[] {
     return items.map(item =>
     ({
       ...item,
@@ -50,15 +50,15 @@ export class TouristAttractionService {
     );
   }
 
-  private filterAndPaginate(items: TouristAttraction[], setting: TouristAttractionListSetting): TouristAttractionsListInfo {
-    const filteredItems = this.filter(items, setting.filter);
+  private _filterAndPaginate(items: TouristAttraction[], setting: TouristAttractionListSetting): TouristAttractionsListInfo {
+    const filteredItems = this._filter(items, setting.filter);
     return {
       lengthAfterFiltering: filteredItems.length,
-      currentPageAttractions: this.getPageAttractions(filteredItems, setting.pageSize, setting.pageNumber),
+      currentPageAttractions: this._getPageAttractions(filteredItems, setting.pageSize, setting.pageNumber),
     };
   }
 
-  private filter(data: TouristAttraction[], filter: string): TouristAttraction[] {
+  private _filter(data: TouristAttraction[], filter: string): TouristAttraction[] {
     return data.filter(attraction => [
       attraction.category,
       attraction.name,
@@ -66,14 +66,14 @@ export class TouristAttractionService {
     ].some(field => field?.toLocaleLowerCase().includes(filter)));
   }
 
-  private getPageAttractions(data: TouristAttraction[], pageSize: number, pageNumber: number): TouristAttraction[] {
+  private _getPageAttractions(data: TouristAttraction[], pageSize: number, pageNumber: number): TouristAttraction[] {
     const fromIndex = pageSize * pageNumber;
     const toIndex = pageSize * (pageNumber + 1);
     return data.slice(fromIndex, toIndex);
   }
 
-  public add(attraction: TouristAttraction): Observable<TouristAttraction> {
-    this.cache = undefined;
-    return this.http.post<TouristAttraction>(this.touristAttractionsUrl, attraction);
+  public _add(attraction: TouristAttraction): Observable<TouristAttraction> {
+    this._cache = undefined;
+    return this._http.post<TouristAttraction>(this._touristAttractionsUrl, attraction);
   }
 }
