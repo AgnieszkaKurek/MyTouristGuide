@@ -12,8 +12,9 @@ import { Subscription } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AttractionEditComponent implements OnDestroy {
-  public form: FormGroup = this._attractionEditService.form;
   private _addActionSubscription: Subscription;
+
+  public form: FormGroup = this._attractionEditService.form;
 
   public constructor(
     private _attractionEditService: AttractionEditService,
