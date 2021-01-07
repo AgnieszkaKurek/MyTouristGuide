@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class AttractionEditComponent implements OnDestroy {
   public form: FormGroup = this._attractionEditService.form;
-  private _subscription: Subscription;
+  private _addActionSubscription: Subscription;
 
   public constructor(
     private _attractionEditService: AttractionEditService,
@@ -23,11 +23,11 @@ export class AttractionEditComponent implements OnDestroy {
 
   public onSubmit(): void {
     const attraction = this.form.getRawValue() as TouristAttraction;
-    this._subscription = this._attractionEditService.add(attraction).subscribe();
+    this._addActionSubscription = this._attractionEditService.add(attraction).subscribe();
     this._router.navigate(['list']);
   }
 
   public ngOnDestroy(): void {
-    this._subscription?.unsubscribe();
+    this._addActionSubscription?.unsubscribe();
   }
 }
