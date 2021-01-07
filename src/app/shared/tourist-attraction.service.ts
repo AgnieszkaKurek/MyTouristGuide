@@ -63,7 +63,7 @@ export class TouristAttractionService {
       attraction.category,
       attraction.name,
       attraction.place,
-    ].some(field => field.toLocaleLowerCase().includes(filter)));
+    ].some(field => field?.toLocaleLowerCase().includes(filter)));
   }
 
   private getPageAttractions(data: TouristAttraction[], pageSize: number, pageNumber: number): TouristAttraction[] {
