@@ -26,6 +26,7 @@ export class AttractionEditComponent implements OnDestroy {
     const attraction = this.form.getRawValue() as TouristAttraction;
     this._addActionSubscription = this._attractionEditService.add(attraction).subscribe();
     this._router.navigate(['list']);
+    this.form.reset();
   }
 
   public ngOnDestroy(): void {
