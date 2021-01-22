@@ -32,6 +32,10 @@ export class AttractionEditComponent implements OnDestroy {
     );
   }
 
+  public hasError(controlName: string, errorName: string): boolean {
+    return this.form.controls[controlName].hasError(errorName);
+  }
+
   public ngOnDestroy(): void {
     this._addActionSubscription?.unsubscribe();
   }

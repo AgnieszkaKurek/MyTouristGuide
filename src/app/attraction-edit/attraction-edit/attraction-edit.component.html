@@ -5,9 +5,18 @@
            matInput
            placeholder="Name"
            formControlName="name"
+           maxlength="40"
            required />
+    <mat-hint>Name should bex max 40 characters long</mat-hint>
+    <mat-error *ngIf="hasError('name', 'required')">
+      Name is required
+    </mat-error>
+    <mat-error *ngIf="hasError('name', 'maxlength')">
+      Name should bex max 40 characters long
+    </mat-error>
   </mat-form-field>
   <button type="submit"
+          [disabled]="!form.valid"
           mat-button
           mat-raised-button>
     Add new attraction

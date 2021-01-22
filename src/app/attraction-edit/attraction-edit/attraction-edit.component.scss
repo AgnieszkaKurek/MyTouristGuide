@@ -1,5 +1,13 @@
 @import "../../../assets/variables.scss";
 
+button {
+  display: flex;
+  justify-content: center;
+  margin-top: $default-small-margin;
+}
+
+button,
 mat-form-field {
+  flex-direction: column;
   margin-left: $default-small-margin;
 }
