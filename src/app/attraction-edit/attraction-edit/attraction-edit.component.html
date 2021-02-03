@@ -1,18 +1,52 @@
 <form [formGroup]="form"
-      (ngSubmit)="onSubmit()">
+      (ngSubmit)="onSubmit()"
+      class="form">
   <mat-form-field>
     <input type="text"
+           #nameImput
            matInput
            placeholder="Name"
            formControlName="name"
            maxlength="40"
-           required />
-    <mat-hint>Name should bex max 40 characters long</mat-hint>
+           required
+           trimOnBlur />
     <mat-error *ngIf="hasError('name', 'required')">
       Name is required
     </mat-error>
     <mat-error *ngIf="hasError('name', 'maxlength')">
       Name should bex max 40 characters long
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select>
+      <mat-option value='Castle'>Castle</mat-option>
+      <mat-option value='MusicFestival'>Music festival</mat-option>
+      <mat-option value='OpenAirMuseum'>Open-air museum</mat-option>
+      <mat-option value='HauntedHause'>Haunted house</mat-option>
+      <mat-option value='SportFacility'>Sport facility</mat-option>
+      <mat-option value='Zoo'>Zoo</mat-option>
+    </mat-select> 
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text"
+           #nameImput
+           matInput
+           placeholder="Place"
+           formControlName="place"
+           required>
+    <mat-error *ngIf="hasError('place', 'required')">
+      Place is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="date"
+           #nameImput
+           matInput
+           placeholder="visit date"
+           formControlName="visitDate"
+           required />
+    <mat-error *ngIf="hasError('visitDate', 'required')">
+      Visit date is required
     </mat-error>
   </mat-form-field>
   <button type="submit"

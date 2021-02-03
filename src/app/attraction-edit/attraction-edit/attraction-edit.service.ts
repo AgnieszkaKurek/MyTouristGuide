@@ -20,6 +20,9 @@ export class AttractionEditService {
     if (!this._form) {
       this._form = new FormGroup({
         name: new FormControl('', [Validators.required, Validators.maxLength(40)]),
+        category: new FormControl(),
+        place: new FormControl('', [Validators.required]),
+        visitDate: new FormControl('', [Validators.required]),
       });
     }
     return this._form;

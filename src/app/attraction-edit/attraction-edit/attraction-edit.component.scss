@@ -11,3 +11,8 @@ mat-form-field {
   flex-direction: column;
   margin-left: $default-small-margin;
 }
+
+form,
+mat-form-field {
+  width: 50%;
+}

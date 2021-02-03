@@ -5,6 +5,8 @@ import { AttractionEditRoutingModule } from './attraction-edit.routing.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { TrimOnBlurModule } from 'ng2-trim-on-blur';
+import { MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -13,6 +15,8 @@ import { CommonModule } from '@angular/common';
     AttractionEditRoutingModule,
     MatInputModule,
     MatButtonModule,
+    TrimOnBlurModule,
+    MatSelectModule,
   ],
   declarations: [
     AttractionEditComponent,
